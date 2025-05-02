@@ -2,8 +2,8 @@
 .fig.pdf:
 	fig2dev -L pdf -p xx $< $@
 .tex.pdf:
-	pdflatex $<
-	pdflatex $<
+	xelatex -shell-escape $<
+	xelatex -shell-escape $<
 
 all: slide handout release
 
