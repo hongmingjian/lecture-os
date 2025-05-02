@@ -428,12 +428,12 @@ while(1) {                            while(1) {
   \end{itemize}
 
 \begin{lstlisting}
-						bool TSL(bool &target)     void SWAP(bool &a, bool &b)
-						{                          {
-						  bool rv = target;          bool temp = a;
-						  target = true;             a = b;
-						  return rv;                 b= temp;
-						}                          }
+bool TSL(bool &target)     void SWAP(bool &a, bool &b)
+{                          {
+  bool rv = target;          bool temp = a;
+  target = true;             a = b;
+  return rv;                 b= temp;
+}                          }
 \end{lstlisting}
 
   \pause
@@ -451,19 +451,19 @@ while(1) {                            while(1) {
   \end{itemize}
 
 \begin{lstlisting}
-						  bool lock = false;               bool lock=false;
-						  do {                             do {
-						    // entry section                 // entry section
-						    while(TSL(lock))                 bool key = true;
-						      ;                              while(key == true)
-						                                       SWAP(lock, key);
+  bool lock = false;               bool lock=false;
+  do {                             do {
+    // entry section                 // entry section
+    while(TSL(lock))                 bool key = true;
+      ;                              while(key == true)
+                                       SWAP(lock, key);
 
-						    CRITICAL SECTION                 CRITICAL SECTION
+    CRITICAL SECTION                 CRITICAL SECTION
 
-						    // exit section                  // exit section
-						    lock = false;                    lock = false;
+    // exit section                  // exit section
+    lock = false;                    lock = false;
 
-						  } while (1);                     } while (1);
+  } while (1);                     } while (1);
 \end{lstlisting}
 
   \pause
