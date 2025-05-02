@@ -84,15 +84,15 @@
   \begin{frame}
   \frametitle{Process revisited} \pause
   \begin{itemize}
-  \item{The process is} \pause
+  \item The process is  \pause
     \begin{itemize}
-    \item{a unit of resource allocation;} \pause
-    \item{a unit of dispatching (scheduling).} \pause
+    \item a unit of resource allocation;  \pause
+    \item a unit of dispatching (scheduling).  \pause
     \end{itemize}
-  \item{Traditionally, a process has only one thread of control.} \pause
+  \item Traditionally, a process has only one thread of control.  \pause
     \begin{itemize}
-    \item{If we separate the above two concepts and allow multiple threads of control within one process, we get the threads.} \pause
-    \item{That is, processes are used to group resources together; \pause threads are the entities dispatched (scheduled) for execution on the CPU.}
+    \item If we separate the above two concepts and allow multiple threads of control within one process, we get the threads.  \pause
+    \item That is, processes are used to group resources together; \pause threads are the entities dispatched (scheduled) for execution on the CPU. 
     \end{itemize}
   \end{itemize}
   \end{frame}
@@ -103,15 +103,15 @@
   \begin{frame}
   \frametitle{Thread (1/2)} \pause
   \begin{itemize}
-  \item{A thread is a basic unit of CPU utilization in modern operating system.} \pause
+  \item A thread is a basic unit of CPU utilization in modern operating system.  \pause
     \begin{itemize}
-    \item{Also known as \textbf{lightweight process (LWP)}.}  \pause
+    \item Also known as \textbf{lightweight process (LWP)}.   \pause
     \end{itemize}
-  \item{\textbf{Multi-threading}} \pause
+  \item \textbf{Multi-threading}  \pause
     \begin{itemize}
-    \item{Allowing multiple threads in the same process.} \pause
-    \item{They share resources belonging to the same process, such as its code section, data section, open files, etc.} \pause
-    \item{But, each thread within one process has \textbf{a private thread context (including the CPU register set and other state information) and a private stack}.}
+    \item Allowing multiple threads in the same process.  \pause
+    \item They share resources belonging to the same process, such as its code section, data section, open files, etc.  \pause
+    \item But, each thread within one process has \textbf{a private thread context (including the CPU register set and other state information) and a private stack}. 
     \end{itemize}
   \end{itemize}
   \end{frame}
@@ -140,22 +140,22 @@
   \begin{frame}
   \frametitle{Benefits of thread} \pause
   \begin{itemize}
-  \item{Responsiveness} \pause
+  \item Responsiveness  \pause
     \begin{itemize}
-    \item{Allows other threads to continue responding to the user even if one or several threads is blocked or is performing a lengthy operation.} \pause
+    \item Allows other threads to continue responding to the user even if one or several threads is blocked or is performing a lengthy operation.  \pause
     \end{itemize}
-  \item{Resource sharing} \pause
+  \item Resource sharing  \pause
     \begin{itemize}
-    \item{Since threads within the same process share memory and files, they can communicate with each other without invoking the kernel.} \pause
+    \item Since threads within the same process share memory and files, they can communicate with each other without invoking the kernel.  \pause
     \end{itemize}
-  \item{Economy} \pause
+  \item Economy  \pause
     \begin{itemize}
-    \item{Takes MUCH less time and resource to create a new thread than a process.} \pause
-    \item{Takes MUCH less time to context switch threads within the same process.} \pause
+    \item Takes MUCH less time and resource to create a new thread than a process.  \pause
+    \item Takes MUCH less time to context switch threads within the same process.  \pause
     \end{itemize}
-  \item{Utilization of multiprocessor architectures} \pause
+  \item Utilization of multiprocessor architectures  \pause
     \begin{itemize}
-    \item{Parallelism is possible by assigning each CPU a thread.}
+    \item Parallelism is possible by assigning each CPU a thread. 
     \end{itemize}
   \end{itemize}
   \end{frame}
@@ -164,7 +164,7 @@
   \begin{frame}
   \frametitle{Questions}
   \begin{itemize}
-  \item{Any questions?}
+  \item Any questions? 
   \end{itemize}
   \begin{center}
     \includegraphics[scale=.5]{question}
@@ -179,11 +179,11 @@
   \begin{frame}
   \frametitle{Thread implementation} \pause
   \begin{itemize}
-  \item{Multi-threading can be implemented} \pause
+  \item Multi-threading can be implemented  \pause
     \begin{itemize}
-    \item{at user space for \textbf{user threads};} \pause
-    \item{at the kernel for \textbf{kernel threads}.} \pause
-    %\item{with a hybrid scheme by combining user- and kernel- threads.}
+    \item at user space for \textbf{user threads};  \pause
+    \item at the kernel for \textbf{kernel threads}.  \pause
+    %\item with a hybrid scheme by combining user- and kernel- threads. 
     \end{itemize}
   \end{itemize}
   \end{frame}
@@ -194,16 +194,16 @@
   \begin{frame}
   \frametitle{User threads (1/2)} \pause
   \begin{itemize}
-  \item{It's implemented outside of the kernel as a \textbf{thread library} at the user space.} \pause
+  \item It's implemented outside of the kernel as a \textbf{thread library} at the user space.  \pause
     \begin{itemize}
-    \item{It's the library which provides support for thread creation, scheduling and management.} \pause
-    \item{As far as the kernel is concerned, it's managing ordinary, single-threaded process.} \pause
+    \item It's the library which provides support for thread creation, scheduling and management.  \pause
+    \item As far as the kernel is concerned, it's managing ordinary, single-threaded process.  \pause
     \end{itemize}
-  \item{Examples} \pause
+  \item Examples  \pause
     \begin{itemize}
-%    \item{POSIX \textbf{Pthreads}} \pause
-    \item{Mach \textbf{C-threads}} \pause
-    \item{Solaris 2 \textbf{UI-threads}}
+%    \item POSIX \textbf{Pthreads}  \pause
+    \item Mach \textbf{C-threads}  \pause
+    \item Solaris 2 \textbf{UI-threads} 
     \end{itemize}
   \end{itemize}
   \end{frame}
@@ -212,21 +212,21 @@
   \begin{frame}
   \frametitle{User threads (2/2)} \pause
   \begin{itemize}
-  \item{Advantages of the user threads} \pause
+  \item Advantages of the user threads  \pause
     \begin{itemize}
-    \item{Thread management and context switch need not to trap to the kernel.} \pause
+    \item Thread management and context switch need not to trap to the kernel.  \pause
       \begin{itemize}
-      \item{This will save a lot of CPU cycles.} \pause
+      \item This will save a lot of CPU cycles.  \pause
       \end{itemize}
-    \item{Allow each process to have its own customized scheduling algorithm.} \pause
+    \item Allow each process to have its own customized scheduling algorithm.  \pause
     \end{itemize}
-  \item{Disadvantages of the user threads} \pause
+  \item Disadvantages of the user threads  \pause
     \begin{itemize}
-    \item{Any user-level thread performing a blocking system call will cause the entire process to block.} \pause
+    \item Any user-level thread performing a blocking system call will cause the entire process to block.  \pause
       \begin{itemize}
-      \item{Even if other threads are ready to run within the process.} \pause
+      \item Even if other threads are ready to run within the process.  \pause
       \end{itemize}
-    \item{On a system with multiprocessors, the user-level threads cannot be dispatched for execution in parallel.}
+    \item On a system with multiprocessors, the user-level threads cannot be dispatched for execution in parallel. 
     \end{itemize}
   \end{itemize}
   \end{frame}
@@ -237,20 +237,20 @@
   \begin{frame}
   \frametitle{Kernel threads} \pause
   \begin{itemize}
-  \item{It's supported directly by the operating system.} \pause
+  \item It's supported directly by the operating system.  \pause
     \begin{itemize}
-    \item{The kernel performs thread creation, scheduling and management in kernel space.} \pause
+    \item The kernel performs thread creation, scheduling and management in kernel space.  \pause
     \end{itemize}
-  \item{Examples} \pause
+  \item Examples  \pause
     \begin{itemize}
-    \item{Windows NT/XP} \pause
-    \item{Modern Unix, such as Solaris, FreeBSD, etc} \pause
-    \item{Linux} \pause
-    %\item{Tru64 UNIX} \pause
+    \item Windows NT/XP  \pause
+    \item Modern Unix, such as Solaris, FreeBSD, etc  \pause
+    \item Linux  \pause
+    %\item Tru64 UNIX  \pause
     \end{itemize}
-  \item{Advantages and disadvantages} \pause
+  \item Advantages and disadvantages  \pause
     \begin{itemize}
-    \item{Inverse of the user threads.}
+    \item Inverse of the user threads. 
     \end{itemize}
   \end{itemize}
   \end{frame}
@@ -264,11 +264,11 @@
   \frametitle{Multi-threading models} \pause
   \begin{minipage}[c]{0.5\textwidth}
     \begin{itemize}
-    \item{According to the implementation of the threads, there are three multi-threading models.} \pause
+    \item According to the implementation of the threads, there are three multi-threading models.  \pause
       \begin{itemize}
-      \item{Many-to-One (Old Unix)} \pause
-      \item{One-to-One (Windows)} \pause
-      \item{Many-to-Many (Solaris)} \pause
+      \item Many-to-One (Old Unix)  \pause
+      \item One-to-One (Windows)  \pause
+      \item Many-to-Many (Solaris)  \pause
       \end{itemize}
       \includegraphics[scale=0.3]{v6f5-2} \pause
     \end{itemize}
@@ -287,7 +287,7 @@
   \begin{frame}
   \frametitle{Questions}
   \begin{itemize}
-  \item{Any questions?}
+  \item Any questions? 
   \end{itemize}
   \begin{center}
     \includegraphics[scale=.5]{question}
@@ -304,8 +304,8 @@
   \begin{frame}
   \frametitle{Multi-threaded programming} \pause
   \begin{itemize}
-  \item{Application programming interfaces (APIs)} \pause
-  \item{Writing multi-threaded code}
+  \item Application programming interfaces (APIs)  \pause
+  \item Writing multi-threaded code 
   \end{itemize}
   \end{frame}
 
@@ -317,17 +317,17 @@
   \begin{frame}
   \frametitle{Multi-threaded application programming interface} \pause
   \begin{itemize}
-  \item{\textbf{Pthreads}} \pause
+  \item \textbf{Pthreads}  \pause
     \begin{itemize}
-    \item{Pthreads refers to the POSIX\footnote{POSIX or ``Portable Operating System Interface for uniX'' is the collective name of a family of related standards specified by the IEEE to define the application programming interface (API) for software compatible with variants of the Unix operating system.} standard (IEEE 1003.1c) defining an API for thread creation and synchronization.} \pause
+    \item Pthreads refers to the POSIX\footnote{POSIX or ``Portable Operating System Interface for uniX'' is the collective name of a family of related standards specified by the IEEE to define the application programming interface (API) for software compatible with variants of the Unix operating system.} standard (IEEE 1003.1c) defining an API for thread creation and synchronization.  \pause
       \begin{itemize}
-      \item{It's a \emph{specification} for thread behavior, NOT an \emph{implementation}.} \pause
+      \item It's a \emph{specification} for thread behavior, NOT an \emph{implementation}.  \pause
       \end{itemize}
     \end{itemize}
-  \item{Win32} \pause
+  \item Win32  \pause
     \begin{itemize}
-    \item{CreateThread, ExitThread and TerminateThread, etc.} \pause
-    \item{\href{http://sources.redhat.com/pthreads-win32}{Pthreads for Win32}}
+    \item CreateThread, ExitThread and TerminateThread, etc.  \pause
+    \item \href{http://sources.redhat.com/pthreads-win32}{Pthreads for Win32} 
     \end{itemize}
   \end{itemize}
   \end{frame}
@@ -439,7 +439,7 @@ DWORD WINAPI runner(LPVOID arg)
   \begin{frame}
   \frametitle{Questions}
   \begin{itemize}
-  \item{Any questions?}
+  \item Any questions? 
   \end{itemize}
   \begin{center}
     \includegraphics[scale=.5]{question}
@@ -454,10 +454,10 @@ DWORD WINAPI runner(LPVOID arg)
   \begin{frame}
   \frametitle{Writing multi-threaded code} \pause
   \begin{itemize}
-  \item{There are many tricks to write multi-threaded code. We will examine two of them:} \pause
+  \item There are many tricks to write multi-threaded code. We will examine two of them:  \pause
     \begin{itemize}
-    \item{Thread-specific data (Thread local storage, TLS)} \pause
-    \item{Reentrant code}
+    \item Thread-specific data (Thread local storage, TLS)  \pause
+    \item Reentrant code 
     \end{itemize}
   \end{itemize}
   \end{frame}
@@ -466,14 +466,14 @@ DWORD WINAPI runner(LPVOID arg)
   \begin{frame}
   \frametitle{Thread local storage (TLS) (1/2)} \pause
   \begin{itemize}
-  \item{Threads belonging to a process share the data of the process.} \pause
+  \item Threads belonging to a process share the data of the process.  \pause
     \begin{itemize}
-    \item{This is one of benefits of multi-threaded programming.} \pause
+    \item This is one of benefits of multi-threaded programming.  \pause
     \end{itemize}
-  \item{However, each thread might need its own copy of certain data in some circumstances.} \pause
+  \item However, each thread might need its own copy of certain data in some circumstances.  \pause
     \begin{itemize}
       \begin{minipage}[c]{0.4\textwidth}
-      \item{For example, in the Unix/Linux, when a process makes a system call that fails, the error code is put into a global variable \emph{errno}. It can be inspected later to determine the reason of failure.} \pause
+      \item For example, in the Unix/Linux, when a process makes a system call that fails, the error code is put into a global variable \emph{errno}. It can be inspected later to determine the reason of failure.  \pause
       \end{minipage}%
       \begin{minipage}[c]{0.6\textwidth}
         \begin{center}
@@ -488,16 +488,16 @@ DWORD WINAPI runner(LPVOID arg)
   \begin{frame}
   \frametitle{Thread local storage (TLS) (2/2)} \pause
   \begin{itemize}
-  \item{Various solutions to this problem are possible.} \pause
+  \item Various solutions to this problem are possible.  \pause
     \begin{itemize}
-    \item{Prohibit global variables altogether.} \pause
-    \item{Assign each thread its own private global variables, i.e., \textbf{thread local storage}.} \pause
+    \item Prohibit global variables altogether.  \pause
+    \item Assign each thread its own private global variables, i.e., \textbf{thread local storage}.  \pause
     \end{itemize}
-  \item{Examples} \pause
+  \item Examples  \pause
     \begin{itemize}
-    \item{Pthreads library provides API support for TLS.} \pause
-    \item{Win32 also includes \emph{TlsAlloc/TlsFree/TlsGetValue/TlsSetValue} to allocate and access the TLS.} \pause
-    \item{Latest C/C++ compilers (such as MSVC and GCC) add a new storage class \emph{\_\_thread} to declare global/static variables as TLS directly.} %FIXME
+    \item Pthreads library provides API support for TLS.  \pause
+    \item Win32 also includes \emph{TlsAlloc/TlsFree/TlsGetValue/TlsSetValue} to allocate and access the TLS.  \pause
+    \item Latest C/C++ compilers (such as MSVC and GCC) add a new storage class \emph{\_\_thread} to declare global/static variables as TLS directly.  %FIXME
     \end{itemize}
   \end{itemize}
   \end{frame}
@@ -506,14 +506,14 @@ DWORD WINAPI runner(LPVOID arg)
   \begin{frame}
   \frametitle{Reentrant code}
   \begin{itemize}
-  \item{A piece of code is NOT reentrant,} \pause
+  \item A piece of code is NOT reentrant,  \pause
     \begin{itemize}
-    \item{if it's NOT designed to have a second call made to it while a previous call has NOT yet finished.} \pause
-    \item{For example, a function manipulating (inserting or deleting) a global singly-linked list.} \pause
+    \item if it's NOT designed to have a second call made to it while a previous call has NOT yet finished.  \pause
+    \item For example, a function manipulating (inserting or deleting) a global singly-linked list.  \pause
     \end{itemize}
-  \item{Solution: synchronization} \pause
+  \item Solution: synchronization  \pause
     \begin{itemize}
-    \item{Will be covered in chapter 7.}
+    \item Will be covered in chapter 7. 
     \end{itemize}
   \end{itemize}
   \end{frame}
@@ -522,7 +522,7 @@ DWORD WINAPI runner(LPVOID arg)
   \begin{frame}
   \frametitle{Questions}
   \begin{itemize}
-  \item{Any questions?}
+  \item Any questions? 
   \end{itemize}
   \begin{center}
     \includegraphics[scale=.5]{question}

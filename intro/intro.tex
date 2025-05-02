@@ -70,19 +70,19 @@
   \begin{frame}
     \frametitle{课程简介} \pause
 	  \begin{itemize}
-	    \item{主要内容} \pause
+	    \item 主要内容  \pause
 	      \begin{itemize}
-	      \item{操作系统的基本概念、原理和设计。} \pause
+	      \item 操作系统的基本概念、原理和设计。  \pause
 	      \end{itemize}
-	    \item{教材及参考资料} \pause
+	    \item 教材及参考资料  \pause
 	      \begin{itemize}
 	      \item \href{https://www.os-book.com}{\textbf{Abraham Silberschatz, Operating System Concepts, 6th Edition, John Wiley \& Sons, Inc.}}  \pause
 	        \begin{itemize}
-	        \item{10th edition is also available.} \pause
+	        \item 10th edition is also available.  \pause
 
 	        \end{itemize}
-	      \item{\href{https://www.cs.vu.nl/~ast/books/mos2}{Andrew S. Tanenbaum, Modern operating System, 2nd Edition, Prentice Hall.}} \pause
-	      \item{Maurice J. Bach, The design of Unix operating system, Pearson education.} \pause
+	      \item \href{https://www.cs.vu.nl/~ast/books/mos2}{Andrew S. Tanenbaum, Modern operating System, 2nd Edition, Prentice Hall.}  \pause
+	      \item Maurice J. Bach, The design of Unix operating system, Pearson education.  \pause
 	      \end{itemize}
 	    \begin{center}
 	    	\includegraphics[scale=0.4]{oscv6}  \pause
@@ -91,9 +91,9 @@
 			\hspace{1mm}
 	    	\includegraphics[scale=0.15]{uos}    \pause
 	    \end{center}
-%	    \item{作业} \pause
+%	    \item 作业  \pause
 %	      \begin{itemize}
-%	      \item{记入总成绩，严禁抄袭！}
+%	      \item 记入总成绩，严禁抄袭！ 
 %	      \end{itemize}
 	  \end{itemize}
   \end{frame}
@@ -104,16 +104,16 @@
   \begin{frame}
     \frametitle{为什么要学习操作系统原理？} \pause
 	  \begin{itemize}
-	  \item{操作系统是最重要的系统软件之一，} \pause
+	  \item 操作系统是最重要的系统软件之一，  \pause
 	    \begin{itemize}
-	    \item{没有操作系统的计算机几乎不能使用；} \pause
-	    \item{学习操作系统将帮助软件开发人员开发出优秀的应用软件系统。} \pause
+	    \item 没有操作系统的计算机几乎不能使用；  \pause
+	    \item 学习操作系统将帮助软件开发人员开发出优秀的应用软件系统。  \pause
 	    \end{itemize}
-	  \item{操作系统是最复杂的系统软件之一，} \pause
+	  \item 操作系统是最复杂的系统软件之一，  \pause
 	    \begin{itemize}
-	    \item{学习计算机系统是如何工作的；} \pause
-	    \item{学习如何通过\textbf{抽象}来掌握复杂的软件系统；} \pause
-	    \item{学习如何系统地设计复杂的软件系统。}
+	    \item 学习计算机系统是如何工作的；  \pause
+	    \item 学习如何通过\textbf{抽象}来掌握复杂的软件系统；  \pause
+	    \item 学习如何系统地设计复杂的软件系统。 
 	    \end{itemize}
 	  \end{itemize}
   \end{frame}
@@ -135,25 +135,25 @@
   \begin{frame}
     \frametitle{What's an Operating System?} \pause
 	  \begin{itemize}
-	  \item{Different views} \pause
+	  \item Different views  \pause
 	    \begin{itemize}
-	    \item{The operating system controls and coordinates the use of the hardware among the various application programs for the various users.} \pause
+	    \item The operating system controls and coordinates the use of the hardware among the various application programs for the various users.  \pause
 	      \begin{itemize}
-	      \item{\textbf{Control program}} \pause
+	      \item \textbf{Control program}  \pause
 	      \end{itemize}
-	    \item{The operating system manages the resources of a computer so that various applications and users can operate the computer system efficiently and fairly.} \pause
+	    \item The operating system manages the resources of a computer so that various applications and users can operate the computer system efficiently and fairly.  \pause
 	      \begin{itemize}
-	      \item{\textbf{Resource manager (Resource allocator)}} \pause
+	      \item \textbf{Resource manager (Resource allocator)}  \pause
 	      \end{itemize}
-	    \item{The operating system abstracts the computer hardware and presents the user a friendly interface.} \pause
+	    \item The operating system abstracts the computer hardware and presents the user a friendly interface.  \pause
 	      \begin{itemize}
-	      \item{\textbf{Extended machine (Virtual machine)}} \pause
+	      \item \textbf{Extended machine (Virtual machine)}  \pause
 	      \end{itemize}
 	    \end{itemize}
-	  \item{So, what's an operating system?} \pause
+	  \item So, what's an operating system?  \pause
 	    \begin{itemize}
-	    \item{\textbf{No} common accepted definition is available.} \pause
-	    \item{The operating system exists because they are a reasonable way to solve the problem of creating a usable computing system.}
+	    \item \textbf{No} common accepted definition is available.  \pause
+	    \item The operating system exists because they are a reasonable way to solve the problem of creating a usable computing system. 
 	    \end{itemize}
 	  \end{itemize}
   \end{frame}
@@ -164,21 +164,21 @@
   \begin{frame}
     \frametitle{Components of an operating system} \pause
 	  \begin{itemize}
-	  \item{What's the part of the operating system?} \pause
+	  \item What's the part of the operating system?  \pause
 	    \begin{itemize}
-	    \item{Various people, company or organization has different opinions.} \pause
+	    \item Various people, company or organization has different opinions.  \pause
 	      \begin{itemize}
-	      \item{Microsoft insisted that web browser and media player were parts of the operating system.} \pause
+	      \item Microsoft insisted that web browser and media player were parts of the operating system.  \pause
 	      \end{itemize}
 	    \end{itemize}
-	  \item{In this course, we will focus on the \textbf{kernel} of the operating system.} \pause
+	  \item In this course, we will focus on the \textbf{kernel} of the operating system.  \pause
 	    \begin{itemize}
-	    \item{The kernel provides the lowest level of abstraction layer for the resources (especially memory, processors and I/O devices). It includes (but is not limited to) the following components} \pause
+	    \item The kernel provides the lowest level of abstraction layer for the resources (especially memory, processors and I/O devices). It includes (but is not limited to) the following components  \pause
 	      \begin{itemize}
-	      \item{\textbf{CPU manager}} \pause
-	      \item{\textbf{Memory Manager}} \pause
-	      \item{File System} \pause
-	      \item{Device Manager}
+	      \item \textbf{CPU manager}  \pause
+	      \item \textbf{Memory Manager}  \pause
+	      \item File System  \pause
+	      \item Device Manager 
 	      \end{itemize}
 	    \end{itemize}
 	  \end{itemize}
@@ -190,24 +190,24 @@
   \begin{frame}
     \frametitle{History of Operating System} \pause
 	  \begin{itemize}
-	  \item{To see what operating systems are and what they do, we will consider how they have developed over past 45 years.} \pause
-	  \item{Operating system runs on specific hardwares.} \pause
+	  \item To see what operating systems are and what they do, we will consider how they have developed over past 45 years.  \pause
+	  \item Operating system runs on specific hardwares.  \pause
 	    \begin{itemize}
-	    \item{We cannot understand operating system without some knowledge of underlying hardware.} \pause
+	    \item We cannot understand operating system without some knowledge of underlying hardware.  \pause
 	    \end{itemize}
-	  \item{So, we will trace the evolution of computer systems and their operating systems to identify the common elements of operating systems.} \pause
+	  \item So, we will trace the evolution of computer systems and their operating systems to identify the common elements of operating systems.  \pause
 	    \begin{itemize}
-	    \item{Mainframes and mini-computers} \pause
+	    \item Mainframes and mini-computers  \pause
 	      \begin{itemize}
-	      \item{Mainframe - IBM System z9} \pause
-	      \item{Mini-computer - IBM System i} \pause
+	      \item Mainframe - IBM System z9  \pause
+	      \item Mini-computer - IBM System i  \pause
 	      \end{itemize}
-	    \item{Desktop computers} \pause
+	    \item Desktop computers  \pause
 	      \begin{itemize}
-	      \item{Apple II, Macintosh} \pause
-	      \item{IBM Personal Computer} \pause
+	      \item Apple II, Macintosh  \pause
+	      \item IBM Personal Computer  \pause
 	      \end{itemize}
-	    \item{Embedded computers}
+	    \item Embedded computers 
 	    \end{itemize}
 	  \end{itemize}
   \end{frame}
@@ -216,12 +216,12 @@
   \begin{frame}
     \frametitle{Operating systems for mainframes and minicomputers} \pause
 	  \begin{itemize}
-	  \item{Mainframes and minicomputers usually have dedicated operating systems.} \pause
+	  \item Mainframes and minicomputers usually have dedicated operating systems.  \pause
 	    \begin{itemize}
-	    \item{\textbf{zOS} is the operating system for IBM System z9.} \pause
-	    \item{\textbf{OS/400} is the operating system for IBM System i.} \pause
+	    \item \textbf{zOS} is the operating system for IBM System z9.  \pause
+	    \item \textbf{OS/400} is the operating system for IBM System i.  \pause
 	    \end{itemize}
-	  \item{They evolved from simple \textbf{batch system}, to \textbf{multiprogramming system} and to \textbf{time-sharing system}.}
+	  \item They evolved from simple \textbf{batch system}, to \textbf{multiprogramming system} and to \textbf{time-sharing system}. 
 	  \end{itemize}
   \end{frame}
 
@@ -229,12 +229,12 @@
   \begin{frame}
     \frametitle{Batch systems(1/4)} \pause
 	  \begin{itemize}
-	  \item{The computer runs one and only one application at a time.} \pause
-	  \item{Batching similar jobs} \pause
+	  \item The computer runs one and only one application at a time.  \pause
+	  \item Batching similar jobs  \pause
 	    \begin{itemize}
-	    \item{Automatically transfers control from one job to another.} \pause
+	    \item Automatically transfers control from one job to another.  \pause
 	    \end{itemize}
-	  \item{First rudimentary operating system.}
+	  \item First rudimentary operating system. 
 	  \end{itemize}
   \end{frame}
 
@@ -245,9 +245,9 @@
 	    \includegraphics[scale=0.4]{mosv2f1-2} \pause
 	  \end{center}
 	  \begin{itemize}
-	  \item{\scriptsize{(a) Programmers bring cards to IBM 1401} \pause \scriptsize{(b) 1401 reads batch of jobs into tape.}} \pause
-	  \item{\scriptsize{(c) Operator carries input tape to IBM 7094} \pause  \scriptsize{(d) 7094 does computing.}} \pause
-	  \item{\scriptsize{(e) Operator carries output tape to IBM 1401.} \pause \scriptsize{(f) 1401 prints output.}}
+	  \item \scriptsize{(a) Programmers bring cards to IBM 1401} \pause \scriptsize{(b) 1401 reads batch of jobs into tape.}  \pause
+	  \item \scriptsize{(c) Operator carries input tape to IBM 7094} \pause  \scriptsize{(d) 7094 does computing.}  \pause
+	  \item \scriptsize{(e) Operator carries output tape to IBM 1401.} \pause \scriptsize{(f) 1401 prints output.} 
 	  \end{itemize}
   \end{frame}
 
@@ -255,7 +255,7 @@
   \begin{frame}
     \frametitle{Batch systems(3/4)} \pause
 	  \begin{itemize}
-	  \item{A typical job: } \pause
+	  \item A typical job:   \pause
 	  \end{itemize}
 	  \begin{center}
 	    \includegraphics[scale=0.5]{mosv2f1-3}
@@ -266,7 +266,7 @@
   \begin{frame}
     \frametitle{Batch system(4/4)} \pause
 	  \begin{itemize}
-	  \item{A punch card} \pause
+	  \item A punch card  \pause
 	  \end{itemize}
 	  \begin{center}
 	    \includegraphics[scale=0.5]{punchcard}
@@ -277,7 +277,7 @@
   \begin{frame}
     \frametitle{Multiprogramming systems} \pause
 	  \begin{itemize}
-	  \item{Several jobs are kept in main memory at the same time, and the CPU is multiplexed among them.} \pause
+	  \item Several jobs are kept in main memory at the same time, and the CPU is multiplexed among them.  \pause
 	  \end{itemize}
 	  \begin{center}
 	    \includegraphics[scale=0.5]{v6f1-3}
@@ -296,9 +296,9 @@
   \begin{frame}
     \frametitle{Time-sharing systems} \pause
 	  \begin{itemize}
-	  \item{The CPU is multiplexed among several jobs that are kept in memory and on disk (the CPU is allocated to a job only if the job is in memory).} \pause
+	  \item The CPU is multiplexed among several jobs that are kept in memory and on disk (the CPU is allocated to a job only if the job is in memory).  \pause
 	    \begin{itemize}
-	    \item{Designed for interactive computing which requires quick response time.} \pause
+	    \item Designed for interactive computing which requires quick response time.  \pause
 	    \end{itemize}
 	  \end{itemize}
 	  \setlength{\unitlength}{0.5cm}
@@ -319,19 +319,19 @@
   \begin{frame}
   \frametitle{Operating systems for desktop computers} \pause
 	  \begin{itemize}
-	  	\item{Operating systems for these computers have benefited in several ways from the development of the operating systems for mainframes.} \pause
+	  	\item Operating systems for these computers have benefited in several ways from the development of the operating systems for mainframes.  \pause
 	    \begin{itemize}
-		    \item{Apple Macintosh} \pause
-		    \item{Microsoft MS-DOS, Windows 9x/NT} \pause
-		    \item{IBM OS/2} \pause
-		    \item{Unix} \pause
+		    \item Apple Macintosh  \pause
+		    \item Microsoft MS-DOS, Windows 9x/NT  \pause
+		    \item IBM OS/2  \pause
+		    \item Unix  \pause
 		      \begin{itemize}
-		      \item{\textbf{BSD} (Berkeley Software Distribution) Unix, including \href{https://www.freebsd.org/}{FreeBSD}, \href{https://www.openbsd.org/}{OpenBSD} and \href{https://www.netbsd.org/}{NetBSD}} \pause
-		      \item{Solaris by Sun microsystem (acquired by Oracle on 2009/04/20)} \pause
-		      \item{Apple macOS} \pause
+		      \item \textbf{BSD} (Berkeley Software Distribution) Unix, including \href{https://www.freebsd.org/}{FreeBSD}, \href{https://www.openbsd.org/}{OpenBSD} and \href{https://www.netbsd.org/}{NetBSD}  \pause
+		      \item Solaris by Sun microsystem (acquired by Oracle on 2009/04/20)  \pause
+		      \item Apple macOS  \pause
 		      \end{itemize}
-			\item{Linux} \pause
-		    \item{......}
+			\item Linux  \pause
+		    \item ...... 
 	    \end{itemize}
 	  \end{itemize}
   \end{frame}
@@ -340,24 +340,24 @@
   \begin{frame}
     \frametitle{Operating systems for embedded systems} \pause
 	  \begin{itemize}
-	  \item{Embedded computer is often used as a control device in a dedicated application such as industrial control systems. Usually, they have limited resources: } \pause
+	  \item Embedded computer is often used as a control device in a dedicated application such as industrial control systems. Usually, they have limited resources:   \pause
 	    \begin{itemize}
-	    \item{Slow processor, \pause limited memory.} \pause
-	    \item{Small or even no display screen.} \pause
-	    \item{Limited power supply, etc} \pause
+	    \item Slow processor, \pause limited memory.  \pause
+	    \item Small or even no display screen.  \pause
+	    \item Limited power supply, etc  \pause
 	    \end{itemize}
-	  \item{Some control devices have time requirement, i.e., \textbf{Real time}} \pause
+	  \item Some control devices have time requirement, i.e., \textbf{Real time}  \pause
 	    \begin{itemize}
-	    \item{\textbf{Hard} real time, actions absolutely MUST occur at a certain moment.} \pause
-	    \item{\textbf{Soft} real time, missing an occasional deadline is acceptable.} \pause
+	    \item \textbf{Hard} real time, actions absolutely MUST occur at a certain moment.  \pause
+	    \item \textbf{Soft} real time, missing an occasional deadline is acceptable.  \pause
 	    \end{itemize}
-	  \item{Examples} \pause
+	  \item Examples  \pause
 	    \begin{itemize}
-	    %\item{Microsoft Windows CE (Consumer Electronics)} \pause
-	    \item{Windriver: vxWorks} \pause
-            \item{BlackBerry: QNX} \pause
-	    \item{Linux} \pause
-	    \item{......}
+	    %\item Microsoft Windows CE (Consumer Electronics)  \pause
+	    \item Windriver: vxWorks  \pause
+            \item BlackBerry: QNX  \pause
+	    \item Linux  \pause
+	    \item ...... 
 	    \end{itemize}
 	  \end{itemize}
   \end{frame}
@@ -368,7 +368,7 @@
   \begin{frame}
     \frametitle{Features migration} \pause
 	  \begin{itemize}
-	  \item{History repeats itself.} \pause
+	  \item History repeats itself.  \pause
 	  \end{itemize}
 	  \begin{center}
 	    \includegraphics[scale=0.4]{v6f1-6}
@@ -379,7 +379,7 @@
   \begin{frame}
     \frametitle{Questions}
 	  \begin{itemize}
-	  \item{Any questions?}
+	  \item Any questions? 
 	  \end{itemize}
 	  \begin{center}
 	    \includegraphics[scale=.5]{question}

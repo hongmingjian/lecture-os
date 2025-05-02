@@ -81,18 +81,18 @@
   \begin{frame}
   \frametitle{Background} \pause
   \begin{itemize}
-  \item{Cooperating processes may share a block of memory via IPC facilities provided by the kernel.} \pause
+  \item Cooperating processes may share a block of memory via IPC facilities provided by the kernel.  \pause
     \begin{itemize}
-    \item{Multiple threads within a process may share a piece of memory by using global variables.} \pause
+    \item Multiple threads within a process may share a piece of memory by using global variables.  \pause
     \end{itemize}
-  \item{Concurrent access to shared data may result in data inconsistency.} \pause
+  \item Concurrent access to shared data may result in data inconsistency.  \pause
     \begin{itemize}
-    \item{Maintaining data consistency requires mechanisms to ensure the orderly execution of cooperating processes.} \pause
+    \item Maintaining data consistency requires mechanisms to ensure the orderly execution of cooperating processes.  \pause
     \end{itemize}
-  \item{Solution to \emph{producer and consumer problem} (Chapter 4) allows at most \textit{(BSIZE - 1)} items in buffer at the same time.} \pause
+  \item Solution to \emph{producer and consumer problem} (Chapter 4) allows at most \textit{(BSIZE - 1)} items in buffer at the same time.  \pause
     \begin{itemize}
-    \item{A solution, where all \textit{BSIZE} buffers are used is NOT simple.} \pause
-    \item{Suppose that we modify the code by adding a variable \textit{counter}.}
+    \item A solution, where all \textit{BSIZE} buffers are used is NOT simple.  \pause
+    \item Suppose that we modify the code by adding a variable \textit{counter}. 
     \end{itemize}
   \end{itemize}
   \end{frame}
@@ -101,7 +101,7 @@
   \begin{frame}[fragile]
   \frametitle{Producer and consumer problem} \pause
   \begin{itemize}
-  \item{Shared-memory bounded-buffer} \pause
+  \item Shared-memory bounded-buffer  \pause
   \end{itemize}
 \begin{lstlisting}
                    /* Shared variables */
@@ -127,11 +127,11 @@ while(1) {                            while(1) {
   \begin{frame}[fragile]
   \frametitle{Problem of above solution (1/2)} \pause
   \begin{itemize}
-  \item{When producer and consumer processes are executed \emph{concurrently}, they may not function correctly.} \pause
+  \item When producer and consumer processes are executed \emph{concurrently}, they may not function correctly.  \pause
     \begin{itemize}
-    \item{We can show that the value of \textit{counter} may be incorrect as follows.} \pause
+    \item We can show that the value of \textit{counter} may be incorrect as follows.  \pause
     \end{itemize}
-  \item{Note that the ``\textit{counter}$++$'' and ``\textit{counter}$--$'' may be implemented in machine language as} \pause
+  \item Note that the ``\textit{counter}$++$'' and ``\textit{counter}$--$'' may be implemented in machine language as  \pause
   \end{itemize}
 
 \begin{lstlisting}
@@ -152,8 +152,8 @@ while(1) {                            while(1) {
   \begin{frame}
   \frametitle{Problem of above solution (2/2)} \pause
   \begin{itemize}
-  \item{It's important to note that the above two instruction sequences can be \emph{interleaved} because of interrupts or scheduling.} \pause
-  \item{For example, assume \textit{counter} is initially 5,} \pause
+  \item It's important to note that the above two instruction sequences can be \emph{interleaved} because of interrupts or scheduling.  \pause
+  \item For example, assume \textit{counter} is initially 5,  \pause
   \end{itemize}
   \rowcolors[]{1}{blue!20}{blue!10}
   \begin{tabular}{c|c|c|c}
@@ -167,7 +167,7 @@ while(1) {                            while(1) {
     $T_5$   &  & \textit{counter}=register2     & \{\textit{counter}=\color{red}4\color{black}\}     \pause
   \end{tabular}
   \begin{itemize}
-  \item{The value of \textit{counter} may be either 4 or 6, while the correct result should be 5.}
+  \item The value of \textit{counter} may be either 4 or 6, while the correct result should be 5. 
   \end{itemize}
   \end{frame}
 
@@ -175,7 +175,7 @@ while(1) {                            while(1) {
   \begin{frame}
   \frametitle{Questions}
   \begin{itemize}
-  \item{Any questions?}
+  \item Any questions? 
   \end{itemize}
   \begin{center}
     \includegraphics[scale=.5]{question}
@@ -186,11 +186,11 @@ while(1) {                            while(1) {
   \begin{frame}
   \frametitle{Race condition (1/2)} \pause
   \begin{itemize}
-  \item{\emph{Race condition is a situation where several processes access and manipulate the same data concurrently and the outcome of the execution depends on the particular order in which the access takes place}.} \pause
-  \item{How do we avoid race condition?} \pause
+  \item \emph{Race condition is a situation where several processes access and manipulate the same data concurrently and the outcome of the execution depends on the particular order in which the access takes place}.  \pause
+  \item How do we avoid race condition?  \pause
     \begin{itemize}
-    \item{Find some way to prohibit more than one process from reading and writing the shared data concurrently.} \pause
-    \item{That is, the access must be \emph{serialized} even if the processes attempt concurrent access.}
+    \item Find some way to prohibit more than one process from reading and writing the shared data concurrently.  \pause
+    \item That is, the access must be \emph{serialized} even if the processes attempt concurrent access. 
     \end{itemize}
   \end{itemize}
   \end{frame}
@@ -199,16 +199,16 @@ while(1) {                            while(1) {
   \begin{frame}
   \frametitle{Race condition (2/2)} \pause
   \begin{itemize}
-  \item{\textbf{Critical section}} \pause
+  \item \textbf{Critical section}  \pause
     \begin{itemize}
-    \item{a piece of code where the shared resource is accessed.} \pause
+    \item a piece of code where the shared resource is accessed.  \pause
     \end{itemize}
-  \item{A solution of race condition must satisfy the following 4 requirements:} \pause
+  \item A solution of race condition must satisfy the following 4 requirements:  \pause
     \begin{enumerate}
-    \item{\textbf{Mutual exclusion}: No two process may be simultaneously inside their critical section;} \pause
-    \item{\textbf{Progress}: No process running outside its critical section may block other processes trying to enter its critical section;} \pause
-    \item{\textbf{Bounded waiting}: No process should have to wait forever to enter its critical section;} \pause
-    \item{\textbf{Speed}: No assumptions may be made about speeds or the number of the CPUs.}
+    \item \textbf{Mutual exclusion}: No two process may be simultaneously inside their critical section;  \pause
+    \item \textbf{Progress}: No process running outside its critical section may block other processes trying to enter its critical section;  \pause
+    \item \textbf{Bounded waiting}: No process should have to wait forever to enter its critical section;  \pause
+    \item \textbf{Speed}: No assumptions may be made about speeds or the number of the CPUs. 
     \end{enumerate}
   \end{itemize}
   \end{frame}
@@ -217,9 +217,9 @@ while(1) {                            while(1) {
   \begin{frame}[fragile]
   \frametitle{Critical section} \pause
   \begin{itemize}
-  \item{A protocol must be designed to be used by the processes to enter and leave critical section.} \pause
+  \item A protocol must be designed to be used by the processes to enter and leave critical section.  \pause
     \begin{itemize}
-    \item{Each process must request permission to enter its critical section.} \pause
+    \item Each process must request permission to enter its critical section.  \pause
     \end{itemize}
   \end{itemize}
 
@@ -246,7 +246,7 @@ while(1) {                            while(1) {
   \begin{frame}
   \frametitle{Questions}
   \begin{itemize}
-  \item{Any questions?}
+  \item Any questions? 
   \end{itemize}
   \begin{center}
     \includegraphics[scale=.5]{question}
@@ -261,7 +261,7 @@ while(1) {                            while(1) {
   \begin{frame}[fragile]
   \frametitle{First try} \pause
   \begin{itemize}
-  \item{Assume there are only two cooperating processes: $P_i$ and $P_j$, where i+j=1.} \pause
+  \item Assume there are only two cooperating processes: $P_i$ and $P_j$, where i+j=1.  \pause
   \end{itemize}
 
 \begin{lstlisting}
@@ -277,9 +277,9 @@ while(1) {                            while(1) {
 \end{lstlisting}
 
   \begin{itemize}
-  \item{Does it satisfy all 4 requirements for a solution?} \pause
+  \item Does it satisfy all 4 requirements for a solution?  \pause
     \begin{itemize}
-    \item{No, it breaks the \textbf{progress} requirement.}
+    \item No, it breaks the \textbf{progress} requirement. 
     \end{itemize}
   \end{itemize}
 \end{frame}
@@ -303,9 +303,9 @@ while(1) {                            while(1) {
 \end{lstlisting}
 
   \begin{itemize}
-  \item{Does it satisfy all 4 requirements for a solution?} \pause
+  \item Does it satisfy all 4 requirements for a solution?  \pause
     \begin{itemize}
-    \item{No, it breaks the \textbf{progress} requirement too.}
+    \item No, it breaks the \textbf{progress} requirement too. 
     \end{itemize}
   \end{itemize}
 \end{frame}
@@ -331,9 +331,9 @@ while(1) {                            while(1) {
 \end{lstlisting}
 
   \begin{itemize}
-  \item{Does it satisfy all 4 requirements for a solution?} \pause
+  \item Does it satisfy all 4 requirements for a solution?  \pause
     \begin{itemize}
-    \item{Yes, it's a correct solution and is known as \emph{Peterson's algorithm}.}
+    \item Yes, it's a correct solution and is known as \emph{Peterson's algorithm}. 
     \end{itemize}
   \end{itemize}
 \end{frame}
@@ -342,7 +342,7 @@ while(1) {                            while(1) {
   \begin{frame}[fragile]
   \frametitle{Bakery algorithm} \pause
   \begin{itemize}
-  \item{Peterson's algorithm solves the problem for two processes, while \emph{Bakery algorithm} solves it for multiple processes.} \pause
+  \item Peterson's algorithm solves the problem for two processes, while \emph{Bakery algorithm} solves it for multiple processes.  \pause
   \end{itemize}
 
 \begin{lstlisting}
@@ -371,7 +371,7 @@ while(1) {                            while(1) {
   \begin{frame}
   \frametitle{Questions}
   \begin{itemize}
-  \item{Any questions?}
+  \item Any questions? 
   \end{itemize}
   \begin{center}
     \includegraphics[scale=.5]{question}
@@ -384,13 +384,13 @@ while(1) {                            while(1) {
   \begin{frame}
   \frametitle{Synchronization hardware} \pause
   \begin{itemize}
-  \item{Several low-level hardware features may be used to solve the race condition.} \pause
+  \item Several low-level hardware features may be used to solve the race condition.  \pause
     \begin{enumerate}
-    \item{Disabling interrupts} \pause
-    \item{Special instructions} \pause
+    \item Disabling interrupts  \pause
+    \item Special instructions  \pause
       \begin{itemize}
-      \item{TSL (Test and Set Lock)} \pause
-      \item{SWAP}
+      \item TSL (Test and Set Lock)  \pause
+      \item SWAP 
       \end{itemize}
     \end{enumerate}
   \end{itemize}
@@ -400,22 +400,22 @@ while(1) {                            while(1) {
   \begin{frame}
   \frametitle{Disabling interrupts} \pause
   \begin{itemize}
-  \item{The CPU is only switched from process to process as a result of clock or other interrupts.} \pause
+  \item The CPU is only switched from process to process as a result of clock or other interrupts.  \pause
     \begin{itemize}
-    \item{Once a process has disabled interrupts, it can access the shared memory without fear that any other process will intervene.} \pause
+    \item Once a process has disabled interrupts, it can access the shared memory without fear that any other process will intervene.  \pause
     \end{itemize}
-  \item{Example - INTEL x86} \pause
+  \item Example - INTEL x86  \pause
     \begin{itemize}
-	\item{CLI (\textbf{cl}ear \textbf{i}nterrupt) - turn off interrupt} \pause
-	\item{STI (\textbf{s}e\textbf{t} - \textbf{i}nterrupt) - turn on interrupt} \pause
+	\item CLI (\textbf{cl}ear \textbf{i}nterrupt) - turn off interrupt  \pause
+	\item STI (\textbf{s}e\textbf{t} - \textbf{i}nterrupt) - turn on interrupt  \pause
     \end{itemize}
-  \item{Disadvantages} \pause
+  \item Disadvantages  \pause
     \begin{enumerate}
-    \item{User processes should NOT be able to disable the interrupts;} \pause
+    \item User processes should NOT be able to disable the interrupts;  \pause
       \begin{itemize}
-	  \item{CLI/STI are both privileged instructions} \pause
+	  \item CLI/STI are both privileged instructions  \pause
 	  \end{itemize}
-    \item{It's not feasible in a multiprocessor system.}
+    \item It's not feasible in a multiprocessor system. 
     \end{enumerate}
   \end{itemize}
   \end{frame}
@@ -424,7 +424,7 @@ while(1) {                            while(1) {
   \begin{frame}[fragile]
   \frametitle{TSL and SWAP (1/3)} \pause
   \begin{itemize}
-  \item{The TSL and SWAP instructions have the following functionalities, respectively:} \pause
+  \item The TSL and SWAP instructions have the following functionalities, respectively:  \pause
   \end{itemize}
 
 \begin{lstlisting}
@@ -439,7 +439,7 @@ bool TSL(bool &target)     void SWAP(bool &a, bool &b)
   \pause
 
   \begin{itemize}
-  \item{Bear in mind that TSL and SWAP are executed \emph{atomically}, that is, as one uninterruptible unit.}
+  \item Bear in mind that TSL and SWAP are executed \emph{atomically}, that is, as one uninterruptible unit. 
   \end{itemize}
 \end{frame}
 
@@ -447,7 +447,7 @@ bool TSL(bool &target)     void SWAP(bool &a, bool &b)
   \begin{frame}[fragile]
   \frametitle{TSL and SWAP (2/3)} \pause
   \begin{itemize}
-  \item{Use TSL or SWAP to TRY to solve race condition} \pause
+  \item Use TSL or SWAP to TRY to solve race condition  \pause
   \end{itemize}
 
 \begin{lstlisting}
@@ -469,7 +469,7 @@ bool TSL(bool &target)     void SWAP(bool &a, bool &b)
   \pause
 
   \begin{itemize}
-  \item{But these two algorithms do NOT satisfy the \textbf{bounded-waiting} requirement.}
+  \item But these two algorithms do NOT satisfy the \textbf{bounded-waiting} requirement. 
   \end{itemize}
 \end{frame}
 
@@ -477,7 +477,7 @@ bool TSL(bool &target)     void SWAP(bool &a, bool &b)
   \begin{frame}[fragile]
   \frametitle{TSL and SWAP (3/3)} \pause
   \begin{itemize}
-  \item{A correct solution using TSL} \pause
+  \item A correct solution using TSL  \pause
   \end{itemize}
 
 \begin{lstlisting}
@@ -509,20 +509,20 @@ bool TSL(bool &target)     void SWAP(bool &a, bool &b)
   \begin{frame}
   \frametitle{Conclusion} \pause
   \begin{itemize}
-  \item{The above solutions have a common disadvantage: \emph{busy waiting}.} \pause
+  \item The above solutions have a common disadvantage: \emph{busy waiting}.  \pause
     \begin{itemize}
-    \item{While a process is in its critical section, any other process tries to enter its critical section must loop continuously in the entry code.} \pause
-    \item{Busy waiting wastes CPU cycles that some other process might be able to use productively.} \pause
+    \item While a process is in its critical section, any other process tries to enter its critical section must loop continuously in the entry code.  \pause
+    \item Busy waiting wastes CPU cycles that some other process might be able to use productively.  \pause
     \end{itemize}
-  \item{This type of solution is also called a \emph{spinlock}.} \pause
+  \item This type of solution is also called a \emph{spinlock}.  \pause
     \begin{itemize}
-    \item{Because the process ``spins'' while waiting on a lock.} \pause
-    \item{The spinlocks are \textbf{only} useful in multiprocessor systems.} \pause
+    \item Because the process ``spins'' while waiting on a lock.  \pause
+    \item The spinlocks are \textbf{only} useful in multiprocessor systems.  \pause
       \begin{itemize}
-      \item{Because no context switch is required if the locks are expected to be held for short times.}
+      \item Because no context switch is required if the locks are expected to be held for short times. 
       \end{itemize}
     \end{itemize}
-%  \item{In addition, these solutions are not easy to generalize to more complex problems.} \pause
+%  \item In addition, these solutions are not easy to generalize to more complex problems.  \pause
   \end{itemize}
   \end{frame}
 
@@ -530,7 +530,7 @@ bool TSL(bool &target)     void SWAP(bool &a, bool &b)
   \begin{frame}
   \frametitle{Questions}
   \begin{itemize}
-  \item{Any questions?}
+  \item Any questions? 
   \end{itemize}
   \begin{center}
     \includegraphics[scale=.5]{question}
@@ -545,14 +545,14 @@ bool TSL(bool &target)     void SWAP(bool &a, bool &b)
   \begin{frame}
   \frametitle{Semaphore} \pause
   \begin{itemize}
-  \item{The above solutions to race condition are not easy to generalize to more complex problems.} \pause
-  \item{To overcome this difficulty, we can use a synchronization tool called \emph{semaphore}.} \pause
+  \item The above solutions to race condition are not easy to generalize to more complex problems.  \pause
+  \item To overcome this difficulty, we can use a synchronization tool called \emph{semaphore}.  \pause
     \begin{itemize}
-    \item{It's invented by \textit{Edsger Dijkstra} and first used in the \emph{THE} operating system.} \pause
+    \item It's invented by \textit{Edsger Dijkstra} and first used in the \emph{THE} operating system.  \pause
     \end{itemize}
-  \item{What's the semaphore?} \pause
+  \item What's the semaphore?  \pause
     \begin{itemize}
-    \item{A semaphore \emph{S} is an integer variable that, apart from
+    \item A semaphore \emph{S  is an integer variable that, apart from
       initialization, is accessed \textbf{only} through two standard \textbf{atomic} operations: \emph{P}(\emph{down}) and \emph{V}(\emph{up}).}
     \end{itemize}
   \end{itemize}
@@ -588,13 +588,13 @@ void P(semaphore *S) {           void V(semaphore *S) {
   \begin{frame}
   \frametitle{Implementation (2/2)} \pause
     \begin{itemize}
-    \item{The magnitude of the ``value'' is the number of resources available ($>$0) or of processes waiting on that semaphore($<$0).} \pause
-    \item{The \emph{P} and \emph{V} must be executed \textbf{atomically}.} \pause
+    \item The magnitude of the ``value'' is the number of resources available ($>$0) or of processes waiting on that semaphore($<$0).  \pause
+    \item The \emph{P} and \emph{V} must be executed \textbf{atomically}.  \pause
       \begin{itemize}
-      \item{In either of two ways:} \pause
+      \item In either of two ways:  \pause
         \begin{enumerate}
-        \item{Disable interrupts in uni-processor systems or} \pause
-        \item{Spinlocks in multi-processor systems.}
+        \item Disable interrupts in uni-processor systems or  \pause
+        \item Spinlocks in multi-processor systems. 
         \end{enumerate}
       \end{itemize}
     \end{itemize}
@@ -606,15 +606,15 @@ void P(semaphore *S) {           void V(semaphore *S) {
   \begin{frame}
   \frametitle{Application programming interface} \pause
   \begin{itemize}
-  \item{Win32} \pause
+  \item Win32  \pause
     \begin{itemize}
-    \item{CreateSemaphore/CloseHandle} \pause
-    \item{WaitForSingleObject/ReleaseSemaphore} \pause
+    \item CreateSemaphore/CloseHandle  \pause
+    \item WaitForSingleObject/ReleaseSemaphore  \pause
     \end{itemize}
-  \item{POSIX} \pause
+  \item POSIX  \pause
     \begin{itemize}
-    \item{sem\_init/sem\_destroy} \pause
-    \item{sem\_wait/sem\_post}
+    \item sem\_init/sem\_destroy  \pause
+    \item sem\_wait/sem\_post 
     \end{itemize}
   \end{itemize}
   \end{frame}
@@ -623,7 +623,7 @@ void P(semaphore *S) {           void V(semaphore *S) {
   \begin{frame}
   \frametitle{Questions}
   \begin{itemize}
-  \item{Any questions?}
+  \item Any questions? 
   \end{itemize}
   \begin{center}
     \includegraphics[scale=.5]{question}
@@ -636,19 +636,19 @@ void P(semaphore *S) {           void V(semaphore *S) {
   \begin{frame}
   \frametitle{Classic problems of synchronization} \pause
   \begin{itemize}
-  \item{The producer and consumer problem} \pause
+  \item The producer and consumer problem  \pause
     \begin{itemize}
-    \item{Explained in the chapter ``Process Management''.} \pause
+    \item Explained in the chapter ``Process Management''.  \pause
     \end{itemize}
-  \item{The readers-writers problem} \pause
+  \item The readers-writers problem  \pause
     \begin{itemize}
-    \item{A data object is to be shared among several concurrent processes.} \pause
+    \item A data object is to be shared among several concurrent processes.  \pause
       \begin{itemize}
-      \item{Some of them (\emph{readers}) may want \textbf{only} to read the data object, \pause while others (\emph{writers}) may want to update the data object.} \pause
+      \item Some of them (\emph{readers}) may want \textbf{only} to read the data object, \pause while others (\emph{writers}) may want to update the data object.  \pause
       \end{itemize}
-    \item{Multiple readers may read the data object simultaneously, but the writers must have exclusive access to the data object.} \pause
+    \item Multiple readers may read the data object simultaneously, but the writers must have exclusive access to the data object.  \pause
     \end{itemize}
-  \item{The dining-philosophers problem} \pause
+  \item The dining-philosophers problem  \pause
     \begin{center}
     \includegraphics[scale=0.4]{v6f7-16}
     \end{center}
@@ -659,15 +659,15 @@ void P(semaphore *S) {           void V(semaphore *S) {
   \begin{frame}
   \frametitle{The producer and consumer problem (1/2)} \pause
   \begin{itemize}
-  \item{A semaphore \emph{mutex} is used to protect the critical section when accessing the buffer.} \pause
+  \item A semaphore \emph{mutex} is used to protect the critical section when accessing the buffer.  \pause
     \begin{itemize}
-    \item{It's initialized to the value 1.} \pause
+    \item It's initialized to the value 1.  \pause
     \end{itemize}
-  \item{The semaphores \emph{empty} and \emph{full} synchronize the producer
+  \item The semaphores \emph{empty} and \emph{full  synchronize the producer
     and consumer.} \pause
     \begin{itemize}
-    \item{\emph{empty} is initialized to the value \emph{BSIZE};} \pause
-    \item{\emph{full} is initialized to the value 0.}
+    \item \emph{empty} is initialized to the value \emph{BSIZE};  \pause
+    \item \emph{full} is initialized to the value 0. 
     \end{itemize}
   \end{itemize}
   \end{frame}
@@ -721,7 +721,7 @@ do {
   \begin{frame}
   \frametitle{Questions}
   \begin{itemize}
-  \item{Any questions?}
+  \item Any questions? 
   \end{itemize}
   \begin{center}
     \includegraphics[scale=.5]{question}
@@ -732,17 +732,17 @@ do {
   \begin{frame}
   \frametitle{The readers-writers problem (1/2)} \pause
   \begin{itemize}
-  \item{A semaphore \emph{wrt} is used to protect the shared data object.} \pause
+  \item A semaphore \emph{wrt} is used to protect the shared data object.  \pause
     \begin{itemize}
-    \item{It's initialized to the value 1.} \pause
+    \item It's initialized to the value 1.  \pause
     \end{itemize}
-  \item{An integer \emph{readcount} count the number of readers which is busy reading.} \pause
+  \item An integer \emph{readcount} count the number of readers which is busy reading.  \pause
     \begin{itemize}
-    \item{\emph{readcount} is initialized to the value 0;} \pause
+    \item \emph{readcount} is initialized to the value 0;  \pause
     \end{itemize}
-  \item{Another semaphore \emph{mutex} is used to protect the \emph{readcount}.} \pause
+  \item Another semaphore \emph{mutex} is used to protect the \emph{readcount}.  \pause
     \begin{itemize}
-    \item{\emph{mutex} is initialized to the value 1.}
+    \item \emph{mutex} is initialized to the value 1. 
     \end{itemize}
   \end{itemize}
   \end{frame}
@@ -794,7 +794,7 @@ do {
   \begin{frame}
   \frametitle{Questions}
   \begin{itemize}
-  \item{Any questions?}
+  \item Any questions? 
   \end{itemize}
   \begin{center}
     \includegraphics[scale=.5]{question}
@@ -825,9 +825,9 @@ do {
   \pause
 
   \begin{itemize}
-  \item{Is this a correct solution?} \pause
+  \item Is this a correct solution?  \pause
     \begin{itemize}
-    \item{No.}
+    \item No. 
     \end{itemize}
   \end{itemize}
 \end{frame}
@@ -908,7 +908,7 @@ void put_forks(int i)
   \begin{frame}
   \frametitle{Questions}
   \begin{itemize}
-  \item{Any questions?}
+  \item Any questions? 
   \end{itemize}
   \begin{center}
     \includegraphics[scale=.5]{question}
@@ -921,15 +921,15 @@ void put_forks(int i)
   \begin{frame}
   \frametitle{Binary semaphore} \pause
   \begin{itemize}
-  \item{The semaphore construct described in the previous slides is commonly known as a \emph{counting semaphore}.} \pause
+  \item The semaphore construct described in the previous slides is commonly known as a \emph{counting semaphore}.  \pause
     \begin{itemize}
-    \item{Since its value can range over an unrestricted domain.} \pause
+    \item Since its value can range over an unrestricted domain.  \pause
     \end{itemize}
-  \item{A \emph{binary semaphore} is a semaphore with an integer value range only between 0 and 1.} \pause
+  \item A \emph{binary semaphore} is a semaphore with an integer value range only between 0 and 1.  \pause
     \begin{itemize}
-    \item{It can be simpler to implement than a counting semaphore on some hardware architectures.} \pause
+    \item It can be simpler to implement than a counting semaphore on some hardware architectures.  \pause
     \end{itemize}
-  \item{A counting semaphore can be implemented using binary semaphores.}
+  \item A counting semaphore can be implemented using binary semaphores. 
   \end{itemize}
   \end{frame}
 
@@ -985,7 +985,7 @@ void bV(binary-semaphore *bS) {
   \end{minipage}
 
   \begin{itemize}
-    \item{The \emph{bP} and \emph{bV} must be executed \textbf{atomically}.}
+    \item The \emph{bP} and \emph{bV} must be executed \textbf{atomically}. 
   \end{itemize}
 
 \end{frame}
@@ -1036,7 +1036,7 @@ void V(semaphore *S)
   \pause 
 
   \begin{itemize}
-    \item{This implementation of \emph{P} and \emph{V} may \textbf{not} be executed \textbf{atomically}.}
+    \item This implementation of \emph{P} and \emph{V} may \textbf{not} be executed \textbf{atomically}. 
   \end{itemize}
 
 \end{frame}
@@ -1045,7 +1045,7 @@ void V(semaphore *S)
   \begin{frame}
   \frametitle{Questions}
   \begin{itemize}
-  \item{Any questions?}
+  \item Any questions? 
   \end{itemize}
   \begin{center}
     \includegraphics[scale=.5]{question}
@@ -1060,9 +1060,9 @@ void V(semaphore *S)
   \begin{frame}[fragile]
   \frametitle{Deadlock and starvation (1/2)} \pause
   \begin{itemize}
-  \item{Although semaphores provide a convenient and effective mechanism for process synchronization, their incorrect use can still result in hard-to-detect errors.} \pause
+  \item Although semaphores provide a convenient and effective mechanism for process synchronization, their incorrect use can still result in hard-to-detect errors.  \pause
     \begin{itemize}
-    \item{For example, suppose that two \emph{P}s in the producer loop were reversed in order. That is, } \pause
+    \item For example, suppose that two \emph{P}s in the producer loop were reversed in order. That is,   \pause
     \end{itemize}
   \end{itemize}
   \begin{minipage}[c]{0.5\textwidth}
@@ -1109,16 +1109,16 @@ do { /*consumer*/
   \begin{frame}
   \frametitle{Deadlock and starvation (2/2)} \pause
   \begin{itemize}
-  \item{So, what's a deadlock?} \pause
+  \item So, what's a deadlock?  \pause
     \begin{itemize}
-    \item{\emph{A set of processes is deadlocked if each process in the set is waiting for an event that only another process in the set can cause}.} \pause
-    \item{We will cover the deadlock in the next chapter.} \pause
+    \item \emph{A set of processes is deadlocked if each process in the set is waiting for an event that only another process in the set can cause}.  \pause
+    \item We will cover the deadlock in the next chapter.  \pause
     \end{itemize}
-  \item{Another problem related to deadlocks is \emph{starvation} or \emph{indefinite blocking}.} \pause
+  \item Another problem related to deadlocks is \emph{starvation} or \emph{indefinite blocking}.  \pause
     \begin{itemize}
-    \item{A situation where processes wait indefinitely within the semaphore.} \pause
-    \item{For example, the previous solution to the `readers-writers' problem may result in starvation.} \pause
-    \item{The starvation can be avoided by using a FCFS resource allocation policy.}
+    \item A situation where processes wait indefinitely within the semaphore.  \pause
+    \item For example, the previous solution to the `readers-writers' problem may result in starvation.  \pause
+    \item The starvation can be avoided by using a FCFS resource allocation policy. 
     \end{itemize}
   \end{itemize}
   \end{frame}
@@ -1127,7 +1127,7 @@ do { /*consumer*/
   \begin{frame}
   \frametitle{Questions}
   \begin{itemize}
-  \item{Any questions?}
+  \item Any questions? 
   \end{itemize}
   \begin{center}
     \includegraphics[scale=.5]{question}
@@ -1142,18 +1142,18 @@ do { /*consumer*/
   \begin{frame}
   \frametitle{High-level language synchronization constructs} \pause
   \begin{itemize}
-  \item{As you can see, one subtle error when using semaphores may result in race conditions, deadlocks or other unpredictable and irreproducible behavior.} \pause
-  \item{To make the life of programmers easier, several high-level language synchronization constructs have been introduced.} \pause
+  \item As you can see, one subtle error when using semaphores may result in race conditions, deadlocks or other unpredictable and irreproducible behavior.  \pause
+  \item To make the life of programmers easier, several high-level language synchronization constructs have been introduced.  \pause
     \begin{itemize}
-   \item{\emph{Monitors}.} \pause
+   \item \emph{Monitors}.  \pause
       \begin{itemize}
-      \item{It's suggested by Brinch-Hansen in 1973.} \pause
+      \item It's suggested by Brinch-Hansen in 1973.  \pause
       \end{itemize}
-%    \item{\emph{Critical regions};} \pause
+%    \item \emph{Critical regions};  \pause
 %      \begin{itemize}
-%      \item{It's suggested by Hoare and Brinch-Hansen in 1972.} \pause
+%      \item It's suggested by Hoare and Brinch-Hansen in 1972.  \pause
 %      \end{itemize}
-    \item{And many others...}
+    \item And many others... 
     \end{itemize}
   \end{itemize}
   \end{frame}
@@ -1165,18 +1165,18 @@ do { /*consumer*/
   \begin{frame}
   \frametitle{Critical regions} \pause
   \begin{itemize}
-  \item{The critical region construct requires that a variable \emph{v} of type \emph{T}, which is to be shared among many processes, be declared as} \pause
+  \item The critical region construct requires that a variable \emph{v} of type \emph{T}, which is to be shared among many processes, be declared as  \pause
   \end{itemize}
   {\centering\emph{v: shared T;}} \pause
   \begin{itemize}
-  \item{The variable \emph{v} can be accessed only inside a \emph{region} statement of the following form:} \pause
+  \item The variable \emph{v} can be accessed only inside a \emph{region} statement of the following form:  \pause
   \end{itemize}
   {\centering\emph{region v when B do S;}} \pause
   \begin{itemize}
-  \item{When the process tries to execute the \emph{S}, the \emph{B} is evaluated.} \pause
+  \item When the process tries to execute the \emph{S}, the \emph{B} is evaluated.  \pause
     \begin{itemize}
-    \item{If the result is \emph{true}, \emph{S} is executed;} \pause
-    \item{Otherwise, the process relinquishes the CPU and is delayed until \emph{B} becomes \emph{true} and no other process is in the region associated with \emph{v}.}
+    \item If the result is \emph{true}, \emph{S} is executed;  \pause
+    \item Otherwise, the process relinquishes the CPU and is delayed until \emph{B} becomes \emph{true} and no other process is in the region associated with \emph{v}. 
     \end{itemize}
   \end{itemize}
   \end{frame}
@@ -1185,7 +1185,7 @@ do { /*consumer*/
   \begin{frame}[fragile]
   \frametitle{Usage of critical regions} \pause
   \begin{itemize}
-  \item{The producer-consumer problem} \pause
+  \item The producer-consumer problem  \pause
   \end{itemize}
 
 \begin{lstlisting}
@@ -1225,7 +1225,7 @@ region buffer when (count > 0) {
   \begin{frame}
   \frametitle{Questions}
   \begin{itemize}
-  \item{Any questions?}
+  \item Any questions? 
   \end{itemize}
   \begin{center}
     \includegraphics[scale=.5]{question}
@@ -1238,11 +1238,11 @@ region buffer when (count > 0) {
   \begin{frame}[fragile]
   \frametitle{Monitor} \pause
   \begin{itemize}
-  \item{What's a monitor?} \pause
+  \item What's a monitor?  \pause
     \begin{itemize}
-    \item{A monitor is a collection of procedures, variables and data structures that are all grouped together in a special kind of module or package.} \pause
+    \item A monitor is a collection of procedures, variables and data structures that are all grouped together in a special kind of module or package.  \pause
       \begin{minipage}[c]{0.5\textwidth}
-      \item{Monitors have an important property that makes them useful for achieving mutual exclusion: \emph{only one process can be active in a monitor at any instant}.} \pause
+      \item Monitors have an important property that makes them useful for achieving mutual exclusion: \emph{only one process can be active in a monitor at any instant}.  \pause
       \end{minipage}%
       \begin{minipage}[c]{0.5\textwidth}
 
@@ -1274,19 +1274,19 @@ monitor producer-consumer {
   \begin{frame}
   \frametitle{Condition variables} \pause
   \begin{itemize}
-  \item{The monitor introduced so far is not enough for a reasonable solution.} \pause
+  \item The monitor introduced so far is not enough for a reasonable solution.  \pause
     \begin{itemize}
-    \item{We also need a way for processes to block when they cannot proceed within a monitor.} \pause
+    \item We also need a way for processes to block when they cannot proceed within a monitor.  \pause
     \end{itemize}
-  \item{\emph{Condition variables}} \pause
+  \item \emph{Condition variables}  \pause
     \begin{itemize}
     \item{Condition variable is defined as a type of variables, which is
       associated with \textbf{only} two operations:} \pause
       \begin{itemize}
-      \item{\emph{c.wait();} \pause - means that the process invoking it will be suspended until another process invokes} \pause
-      \item{\emph{c.signal();}} \pause
+      \item \emph{c.wait();} \pause - means that the process invoking it will be suspended until another process invokes  \pause
+      \item \emph{c.signal();}  \pause
       \end{itemize}
-    \item{Note that if no process is suspended, then the \emph{signal} operation has no effect.}
+    \item Note that if no process is suspended, then the \emph{signal} operation has no effect. 
     \end{itemize}
   \end{itemize}
   \end{frame}
@@ -1303,18 +1303,18 @@ monitor producer-consumer {
   \begin{frame}
   \frametitle{What happens after a \emph{c.signal()}?} \pause
   \begin{itemize}
-  \item{Suppose a process \emph{P} is invoking \emph{c.signal()} and another
+  \item Suppose a process \emph{P} is invoking \emph{c.signal()  and another
     process \emph{Q} is blocked by the condition variable \emph{c}.} \pause
-  \item{After \emph{P} completed the \emph{c.signal()}, it's possible that
+  \item After \emph{P} completed the \emph{c.signal() , it's possible that
     both \emph{P} and \emph{Q} will be active simultaneously within the monitor.} \pause
     \begin{itemize}
-    \item{This will break the property of the monitor!} \pause
+    \item This will break the property of the monitor!  \pause
     \end{itemize}
-  \item{Three possibilities exist:} \pause
+  \item Three possibilities exist:  \pause
     \begin{itemize}
-    \item{Hoare-style: suspending \emph{P} and letting \emph{Q} run.} \pause
-    \item{Brinch-Hansen-style: \emph{P} must leave the monitor immediately.} \pause
-    \item{Mesa-style (Mesa is a programming language): letting \emph{P} run and suspending \emph{Q}.}
+    \item Hoare-style: suspending \emph{P} and letting \emph{Q} run.  \pause
+    \item Brinch-Hansen-style: \emph{P} must leave the monitor immediately.  \pause
+    \item Mesa-style (Mesa is a programming language): letting \emph{P} run and suspending \emph{Q}. 
     \end{itemize}
   \end{itemize}
   \end{frame}
@@ -1375,7 +1375,7 @@ monitor dp {
   \begin{frame}
   \frametitle{Questions}
   \begin{itemize}
-  \item{Any questions?}
+  \item Any questions? 
   \end{itemize}
   \begin{center}
     \includegraphics[scale=.5]{question}
@@ -1388,17 +1388,17 @@ monitor dp {
   \begin{frame}
  \frametitle{Language support} \pause
  \begin{itemize}
- \item{The monitor constructs must be supported by the programming language to be useful.} \pause
+ \item The monitor constructs must be supported by the programming language to be useful.  \pause
    \begin{itemize}
    \item{That is, the compiler must recognize the monitor construct and
      generate codes to support its functionality.} \pause
    \end{itemize}
- \item{Example: Java (Mesa-style monitor with only one condition variable)} \pause
+ \item Example: Java (Mesa-style monitor with only one condition variable)  \pause
      \begin{itemize}
-     \item{By adding the keyword \emph{synchronized} to a method declaration,
+     \item By adding the keyword \emph{synchronized  to a method declaration,
        Java guarantees that once any thread has started executing that method,
        no other thread will be allowed to start executing any other \emph{synchronized} method in that class.} \pause
-     \item{And Java provides two operations: \emph{wait} and \emph{notify} to block and wakeup the thread.}
+     \item And Java provides two operations: \emph{wait} and \emph{notify} to block and wakeup the thread. 
      \end{itemize}
  \end{itemize}
   \end{frame}
@@ -1409,23 +1409,23 @@ monitor dp {
   \begin{frame}
   \frametitle{Language support (2/2)} \pause
 % \begin{itemize}\parskip=0pt
-% \item{Examples} \pause  % FIXME
+% \item Examples  \pause  % FIXME
    \begin{itemize}\parskip=0pt
-   \item{OpenMP (supports critical-region, www.openmp.org)} \pause
+   \item OpenMP (supports critical-region, www.openmp.org)  \pause
      \begin{itemize}\parskip=0pt
      \item{A specification for a set of compiler directives, library routines,
        and environment variables that can be used to specify shared-memory parallelism in Fortran and C/C++ programs.} \pause
-     \item{Compilers supporting OpenMP} \pause
+     \item Compilers supporting OpenMP  \pause
        \begin{itemize}\parskip=0pt
-       \item{Intel C/C++ Compiler, Microsoft Visual Studio 2005, GCC} \pause
+       \item Intel C/C++ Compiler, Microsoft Visual Studio 2005, GCC  \pause
        \end{itemize}
      \end{itemize}
-   \item{Java (supports Mesa-style monitor with only one condition variable)} \pause
+   \item Java (supports Mesa-style monitor with only one condition variable)  \pause
      \begin{itemize}\parskip=0pt
-     \item{By adding the keyword \emph{synchronized} to a method declaration,
+     \item By adding the keyword \emph{synchronized  to a method declaration,
        Java guarantees that once any thread has started executing that method,
        no other thread will be allowed to start executing any other \emph{synchronized} method in that class.} \pause
-     \item{And Java provides two operations: \emph{wait} and \emph{notify} to block and wakeup the thread.}
+     \item And Java provides two operations: \emph{wait} and \emph{notify} to block and wakeup the thread. 
      \end{itemize}
    \end{itemize}
 % \end{itemize}
@@ -1437,7 +1437,7 @@ monitor dp {
   \begin{frame}
   \frametitle{Questions}
   \begin{itemize}
-  \item{Any questions?}
+  \item Any questions? 
   \end{itemize}
   \begin{center}
     \includegraphics[scale=.5]{question}
@@ -1452,11 +1452,11 @@ monitor dp {
   \begin{frame}
   \frametitle{Relationship of various synchronization constructs (1/2)} \pause
   \begin{itemize}
-  \item{Synchronization constructs introduced so far is \emph{equivalent} in their functionality.} \pause
+  \item Synchronization constructs introduced so far is \emph{equivalent} in their functionality.  \pause
     \begin{itemize}
-    \item{The critical-region can be implemented using semaphore and vice verse.} \pause
-    \item{The monitor can be implemented using semaphore and vice verse.} \pause
-    \item{The critical-region can be implemented using monitor and vice verse.}
+    \item The critical-region can be implemented using semaphore and vice verse.  \pause
+    \item The monitor can be implemented using semaphore and vice verse.  \pause
+    \item The critical-region can be implemented using monitor and vice verse. 
     \end{itemize}
   \end{itemize}
   \end{frame}
@@ -1467,9 +1467,9 @@ monitor dp {
   \begin{frame}
   \frametitle{Relationship of semaphore and monitor} \pause
   \begin{itemize}
-  \item{Semaphore and monitor are \emph{equivalent} in their functionality.} \pause
+  \item Semaphore and monitor are \emph{equivalent} in their functionality.  \pause
     \begin{itemize}
-    \item{But their use and implementation are quite different.} \pause
+    \item But their use and implementation are quite different.  \pause
     \end{itemize}
   \end{itemize}
   \end{frame}
@@ -1658,7 +1658,7 @@ if(x_count > 0) {
   \begin{frame}
   \frametitle{Questions}
   \begin{itemize}
-  \item{Any questions?}
+  \item Any questions? 
   \end{itemize}
   \begin{center}
     \includegraphics[scale=.5]{question}
@@ -1679,7 +1679,7 @@ if(x_count > 0) {
   \begin{frame}
   \frametitle{Questions}
   \begin{itemize}
-	\item{Any questions?}
+	\item Any questions? 
   \end{itemize}
   \begin{center}
 	\includegraphics[scale=.5]{question}

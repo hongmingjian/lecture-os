@@ -67,12 +67,12 @@
   \begin{frame}
     \frametitle{Operating system structures} \pause
     \begin{itemize}
-    \item{An operating system may be viewed from several vantage points:} \pause
+    \item An operating system may be viewed from several vantage points:  \pause
       \begin{itemize}
-      \item{\textbf{Component view} \pause - What does an operating system consist of?} \pause
-      \item{\textbf{Service view} \pause - What the operating system can do for \textbf{users}?} \pause
-      \item{\textbf{Interface view} \pause - How do the \textbf{programmers} interact with the operating system?} \pause
-      \item{\textbf{Structure view} \pause - How did the \textbf{system designers} design the operating system?}
+      \item \textbf{Component view} \pause - What does an operating system consist of?  \pause
+      \item \textbf{Service view} \pause - What the operating system can do for \textbf{users}?  \pause
+      \item \textbf{Interface view} \pause - How do the \textbf{programmers} interact with the operating system?  \pause
+      \item \textbf{Structure view} \pause - How did the \textbf{system designers} design the operating system? 
       \end{itemize}
     \end{itemize}
   \end{frame}
@@ -83,18 +83,18 @@
   \begin{frame}
     \frametitle{Component view} \pause
     \begin{itemize}
-    \item{Most modern operating systems consist of the following components:} \pause
+    \item Most modern operating systems consist of the following components:  \pause
       \begin{itemize}
-      \item{\textbf{CPU management}} \pause
-      \item{\textbf{Memory management}} \pause
-      \item{\textbf{File management}} \pause
-      \item{I/O management} \pause
-      \item{Networking}  \pause
-      \item{Protection} \pause
-      \item{Command-interpreter system (or \textbf{shell}), which is the interface between the user and the operating system. Two flavors:} \pause
+      \item \textbf{CPU management}  \pause
+      \item \textbf{Memory management}  \pause
+      \item \textbf{File management}  \pause
+      \item I/O management  \pause
+      \item Networking   \pause
+      \item Protection  \pause
+      \item Command-interpreter system (or \textbf{shell}), which is the interface between the user and the operating system. Two flavors:  \pause
         \begin{itemize}
-        \item{\textbf{Command-line interpreter} in text mode \pause - gets the next command and executes it.} \pause
-        \item{\textbf{Graphical User Interface (GUI)} in graphical mode \pause - user-friendly mouse-based window-and-menu system.}
+        \item \textbf{Command-line interpreter} in text mode \pause - gets the next command and executes it.  \pause
+        \item \textbf{Graphical User Interface (GUI)} in graphical mode \pause - user-friendly mouse-based window-and-menu system. 
         \end{itemize}
       \end{itemize}
     \end{itemize}
@@ -106,17 +106,17 @@
   \begin{frame}
     \frametitle{Service view (1/2)} \pause
     \begin{itemize}
-    \item{The operating system provides certain services to programs and users:} \pause
+    \item The operating system provides certain services to programs and users:  \pause
       \begin{itemize}
-      \item{Program execution \pause - Load a program into memory and run it.} \pause
-      \item{I/O operations} \pause
-      \item{File-system manipulation} \pause
-      \item{Error detection} \pause
-      \item{Communications \pause - Exchange information between two or more processes.}\\ \pause
+      \item Program execution \pause - Load a program into memory and run it.  \pause
+      \item I/O operations  \pause
+      \item File-system manipulation  \pause
+      \item Error detection  \pause
+      \item Communications \pause - Exchange information between two or more processes. \\ \pause
         \begin{minipage}[c]{0.4\textwidth}
           \begin{itemize}
-          \item{\textbf{Shared memory} for processes executing on the same computer;} \pause
-          \item{\textbf{Message passing} for processes executing on the same or different computers.} \pause
+          \item \textbf{Shared memory} for processes executing on the same computer;  \pause
+          \item \textbf{Message passing} for processes executing on the same or different computers.  \pause
           \end{itemize}
         \end{minipage}%
         \begin{minipage}[c]{0.6\textwidth}
@@ -132,11 +132,11 @@
   \begin{frame}
     \frametitle{Service view (2/2)} \pause
     \begin{itemize}
-    \item{Additional functions exist not for helping the user, but rather for ensuring efficient system operations.} \pause
+    \item Additional functions exist not for helping the user, but rather for ensuring efficient system operations.  \pause
       \begin{itemize}
-      \item{Resource allocation} \pause
-      \item{Accounting} \pause
-      \item{Protection}
+      \item Resource allocation  \pause
+      \item Accounting  \pause
+      \item Protection 
       \end{itemize}
     \end{itemize}
   \end{frame}
@@ -147,16 +147,16 @@
   \begin{frame}
     \frametitle{Interface view - System calls (1/2)} \pause
     \begin{itemize}
-    \item{System calls provide the interface between a running program and the operating system.} \pause
+    \item System calls provide the interface between a running program and the operating system.  \pause
       \begin{itemize}
-      \item{Generally available as assembly-language instructions.} \pause
-      \item{Other languages must wrap the assembly-language instructions to access services provided by the operating system.} \pause
+      \item Generally available as assembly-language instructions.  \pause
+      \item Other languages must wrap the assembly-language instructions to access services provided by the operating system.  \pause
       \end{itemize}
-    \item{Three general methods are used to pass parameters between a running program and the operating system.} \pause
+    \item Three general methods are used to pass parameters between a running program and the operating system.  \pause
       \begin{itemize}
-      \item{Pass parameters in registers.} \pause
-      \item{Store the parameters in a table in memory, and the table address is passed as a parameter in a register.} \pause
-      \item{Push the parameters onto the stack by the program, and pop off the stack by operating system.}
+      \item Pass parameters in registers.  \pause
+      \item Store the parameters in a table in memory, and the table address is passed as a parameter in a register.  \pause
+      \item Push the parameters onto the stack by the program, and pop off the stack by operating system. 
       \end{itemize}
     \end{itemize}
   \end{frame}
@@ -165,27 +165,27 @@
   \begin{frame}
     \frametitle{Interface view - System calls (2/2)} \pause
     \begin{itemize}
-    \item{Process control} \pause
+    \item Process control  \pause
       \begin{itemize}
-      \item{Create process such as \textbf{fork} in Unix/Linux and \textbf{spawn} in MS-DOS.} \pause
-      \item{Wait event and signal event.} \pause
-      \item{Allocate and free memory.} \pause
+      \item Create process such as \textbf{fork} in Unix/Linux and \textbf{spawn} in MS-DOS.  \pause
+      \item Wait event and signal event.  \pause
+      \item Allocate and free memory.  \pause
       \end{itemize}
-    \item{File management} \pause
+    \item File management  \pause
       \begin{itemize}
-      \item{Create, open, read/write, close and delete file} \pause
+      \item Create, open, read/write, close and delete file  \pause
       \end{itemize}
-    \item{Device management} \pause
+    \item Device management  \pause
       \begin{itemize}
-      \item{Logically attach/detach, read, write device} \pause
+      \item Logically attach/detach, read, write device  \pause
       \end{itemize}
-    \item{Information maintenance} \pause
+    \item Information maintenance  \pause
       \begin{itemize}
-      \item{get/set time or date} \pause
+      \item get/set time or date  \pause
       \end{itemize}
-    \item{Communications} \pause
+    \item Communications  \pause
       \begin{itemize}
-      \item{create/delete communication connection, send/receive message}
+      \item create/delete communication connection, send/receive message 
       \end{itemize}
     \end{itemize}
   \end{frame}
@@ -194,17 +194,17 @@
   \begin{frame}
     \frametitle{Interface view - system programs} \pause
     \begin{itemize}
-    \item{System programs provide a convenient environment for program development and execution. They can be divided into:} \pause
+    \item System programs provide a convenient environment for program development and execution. They can be divided into:  \pause
       \begin{itemize}
-      \item{The shell} \pause
-      \item{File management} \pause
-      \item{Status information} \pause
-      \item{File modification} \pause
-      \item{Programming-language support} \pause
-      \item{Program loading an execution} \pause
-      \item{Communications} \pause
+      \item The shell  \pause
+      \item File management  \pause
+      \item Status information  \pause
+      \item File modification  \pause
+      \item Programming-language support  \pause
+      \item Program loading an execution  \pause
+      \item Communications  \pause
       \end{itemize}
-    \item{Most users' view of the operation system is defined by system programs, not the actual system calls.}
+    \item Most users' view of the operation system is defined by system programs, not the actual system calls. 
     \end{itemize}
   \end{frame}
 
@@ -212,7 +212,7 @@
   \begin{frame}
     \frametitle{Questions}
     \begin{itemize}
-    \item{Any questions?}
+    \item Any questions? 
     \end{itemize}
     \begin{center}
       \includegraphics[scale=.5]{question}
@@ -227,17 +227,17 @@
   \begin{frame}
     \frametitle{System structure} \pause
     \begin{itemize}
-    \item{A system as large and complex as a modern operating system must be engineered carefully if it's to function properly and be modified easily.} \pause
-    \item{A common approach is to partition the task into small components, rather than have one monolithic system.} \pause
+    \item A system as large and complex as a modern operating system must be engineered carefully if it's to function properly and be modified easily.  \pause
+    \item A common approach is to partition the task into small components, rather than have one monolithic system.  \pause
       \begin{itemize}
-      \item{Each of these components should be a well-defined portion of the system, with carefully defined inputs, outputs and function.} \pause
+      \item Each of these components should be a well-defined portion of the system, with carefully defined inputs, outputs and function.  \pause
       \end{itemize}
-    \item{How does the system designer organize these components?} \pause
+    \item How does the system designer organize these components?  \pause
       \begin{itemize}
-      \item{Simple structure (or no structure)} \pause
-      \item{Layered structure} \pause
-      \item{Micro-kernel} \pause
-      \item{Virtual machine}
+      \item Simple structure (or no structure)  \pause
+      \item Layered structure  \pause
+      \item Micro-kernel  \pause
+      \item Virtual machine 
       \end{itemize}
     \end{itemize}
   \end{frame}
@@ -248,11 +248,11 @@
   \begin{frame}
     \frametitle{Simple structure} \pause
     \begin{itemize}
-    \item{Many systems do not have a well-defined structure.} \pause
+    \item Many systems do not have a well-defined structure.  \pause
       \begin{itemize}
-      \item{They started as small, simple and limited system, and then evolved into a complex one.} \pause
+      \item They started as small, simple and limited system, and then evolved into a complex one.  \pause
       \end{itemize}
-    \item{Examples: MS-DOS and Unix} \pause
+    \item Examples: MS-DOS and Unix  \pause
     \end{itemize}
     \begin{minipage}[c]{0.5\textwidth}
       \includegraphics[scale=0.4]{v6f3-6} \pause
@@ -268,7 +268,7 @@
   \begin{frame}
     \frametitle{Layered structure (1/4)} \pause
     \begin{itemize}
-    \item{The operating system is broken up into a number of layers, each built on top of lower layers.} \pause
+    \item The operating system is broken up into a number of layers, each built on top of lower layers.  \pause
     \end{itemize}
     \begin{center}
       \includegraphics[scale=0.5]{v6f3-8}
@@ -279,9 +279,9 @@
   \begin{frame}
     \frametitle{Layered structure (2/4)} \pause
     \begin{itemize}
-    \item{Example 1:} \pause
+    \item Example 1:  \pause
       \begin{itemize}
-      \item{The \textbf{THE} operating system by Dijkstra.}
+      \item The \textbf{THE} operating system by Dijkstra. 
       \end{itemize}
     \end{itemize}
     \begin{center}
@@ -293,9 +293,9 @@
   \begin{frame}
     \frametitle{Layered structure (3/4)} \pause
     \begin{itemize}
-    \item{Example 2:} \pause
+    \item Example 2:  \pause
       \begin{itemize}
-      \item{The IBM OS/2 operating system} \pause
+      \item The IBM OS/2 operating system  \pause
       \end{itemize}
     \end{itemize}
     \begin{center}
@@ -307,10 +307,10 @@
   \begin{frame}
     \frametitle{Layered structure (4/4)} \pause
     \begin{itemize}
-    \item{The major difficulty with the layered structure involves} \pause
+    \item The major difficulty with the layered structure involves  \pause
       \begin{enumerate}
-      \item{careful definition of the layers and} \pause
-      \item{less efficient.}
+      \item careful definition of the layers and  \pause
+      \item less efficient. 
       \end{enumerate}
     \end{itemize}
   \end{frame}
@@ -321,15 +321,15 @@
   \begin{frame}
     \frametitle{Micro-kernel (1/2)} \pause
     \begin{itemize}
-    \item{As the Unix operating system expanded, the kernel became large and difficult to manage.} \pause
+    \item As the Unix operating system expanded, the kernel became large and difficult to manage.  \pause
       \begin{itemize}
-      \item{The \textbf{micro-kernel} approach structures the operating system by removing all non-essential components from the kernel and implementing them as system- and user-level programs.} \pause
+      \item The \textbf{micro-kernel} approach structures the operating system by removing all non-essential components from the kernel and implementing them as system- and user-level programs.  \pause
       \end{itemize}
-    \item{Which components should remain in the micro-kernel?} \pause
+    \item Which components should remain in the micro-kernel?  \pause
       \begin{itemize}
-      \item{CPU management} \pause
-      \item{Memory management} \pause
-      \item{Communication facility} \pause
+      \item CPU management  \pause
+      \item Memory management  \pause
+      \item Communication facility  \pause
       \end{itemize}
     \end{itemize}
     \begin{center}
@@ -341,20 +341,20 @@
   \begin{frame}
     \frametitle{Micro-kernel (2/2)} \pause
     \begin{itemize}
-    \item{Example 1} \pause
+    \item Example 1  \pause
       \begin{itemize}
-      \item{The open source \href{https://www.cs.cmu.edu/afs/cs/project/mach/public/www/mach.html}{\textbf{Mach}} from Carnegie Mellon University.} \pause
+      \item The open source \href{https://www.cs.cmu.edu/afs/cs/project/mach/public/www/mach.html}{\textbf{Mach}} from Carnegie Mellon University.  \pause
         \begin{itemize}
-        \item{Used as the kernel of the Apple macOS/iOS/tvOS/watchOS.} \pause
+        \item Used as the kernel of the Apple macOS/iOS/tvOS/watchOS.  \pause
         \end{itemize}
       \end{itemize}
-    %\item{Example 2} \pause
+    %\item Example 2  \pause
     %  \begin{itemize}
-    %  \item{QNX real-time operating system by QNX Inc.} \pause
+    %  \item QNX real-time operating system by QNX Inc.  \pause
     %  \end{itemize}
-    \item{Example 2} \pause
+    \item Example 2  \pause
       \begin{itemize}
-      \item{Micorsoft Windows NT/XP} \pause
+      \item Micorsoft Windows NT/XP  \pause
       \end{itemize}
       \begin{center}
         \includegraphics[scale=.45]{v6f3-10}
@@ -366,7 +366,7 @@
   \begin{frame}
     \frametitle{Questions}
     \begin{itemize}
-    \item{Any questions?}
+    \item Any questions? 
     \end{itemize}
     \begin{center}
       \includegraphics[scale=.5]{question}
@@ -379,12 +379,12 @@
   \begin{frame}
     \frametitle{Virtual machine (1/4)} \pause
     \begin{itemize}
-    \item{If we take a step further from micro-kernel,} \pause
+    \item If we take a step further from micro-kernel,  \pause
       \begin{itemize}
-      \item{The low-level real hardware is ``cloned'' into several identical \textbf{virtual machines}.} \pause
-      \item{That is, virtual machine provides an interface identical to the underlying bare hardware.} \pause
+      \item The low-level real hardware is ``cloned'' into several identical \textbf{virtual machines}.  \pause
+      \item That is, virtual machine provides an interface identical to the underlying bare hardware.  \pause
       \end{itemize}
-    \item{Then, the operating system functionality is built on top of the virtual machines.}
+    \item Then, the operating system functionality is built on top of the virtual machines. 
     \end{itemize}
   \end{frame}
   
@@ -392,7 +392,7 @@
   \begin{frame}
     \frametitle{Virtual machine (2/4)} \pause
     \begin{itemize}
-    \item{Virtual machine structure} \pause
+    \item Virtual machine structure  \pause
     \end{itemize}
     \begin{center}
       \includegraphics[scale=0.6]{v6f3-11}
@@ -403,31 +403,31 @@
   \begin{frame}
     \frametitle{Virtual machine (3/4)} \pause
     \begin{itemize}
-    %\item{Usually, virtual machines can be classified into two kinds:} \pause
+    %\item Usually, virtual machines can be classified into two kinds:  \pause
       %\begin{itemize}
-      \item{\textbf{Hardware virtual machines}} \pause
+      \item \textbf{Hardware virtual machines}  \pause
         \begin{itemize}
-    		\item{\textbf{Native (Full) virtualization} \pause - only partially simulates enough hardware to allow an \textbf{unmodified} operating system to run in isolation, but the \textbf{guest} operating system must be designed for the \textbf{same} type of CPU} \pause
+    		\item \textbf{Native (Full) virtualization} \pause - only partially simulates enough hardware to allow an \textbf{unmodified} operating system to run in isolation, but the \textbf{guest} operating system must be designed for the \textbf{same} type of CPU  \pause
     			\begin{itemize}
-    			\item{VM/370 from IBM} \pause
-    			\item{\href{http://www.linux-kvm.org/page/Main\_Page}{KVM} (Kernel-based Virtual Machine) for Linux} \pause
+    			\item VM/370 from IBM  \pause
+    			\item \href{http://www.linux-kvm.org/page/Main\_Page}{KVM} (Kernel-based Virtual Machine) for Linux  \pause
     			\end{itemize}
 			
-      		\item{\textbf{Paravirtualization} \pause - does not simulate hardware but instead offers a special API that requires  \textbf{guest}  operating system \textbf{modifications} to run.} \pause
+      		\item \textbf{Paravirtualization} \pause - does not simulate hardware but instead offers a special API that requires  \textbf{guest}  operating system \textbf{modifications} to run.  \pause
 		 	\begin{itemize}
-			\item{\href{http://www.xenproject.org/}{Xen} from Cambridge University} \pause
+			\item \href{http://www.xenproject.org/}{Xen} from Cambridge University  \pause
 		 	\end{itemize}
 		 
-              	\item{\textbf{Emulation} \pause - simulates the complete hardware, allowing an \textbf{unmodified} operating system for a completely \textbf{different} CPU to run.} \pause
+              	\item \textbf{Emulation} \pause - simulates the complete hardware, allowing an \textbf{unmodified} operating system for a completely \textbf{different} CPU to run.  \pause
                 		\begin{itemize}
-                		\item{\href{https://www.vmware.com/}{VMware}, \href{https://www.parallels.com/}{Parallels}, \href{https://www.virtualbox.org/}{VirtualBox}, \href{https://www.qemu.org/}{QEMU},  \href{https://www.mamedev.org/}{MAME}, etc} \pause
+                		\item \href{https://www.vmware.com/}{VMware}, \href{https://www.parallels.com/}{Parallels}, \href{https://www.virtualbox.org/}{VirtualBox}, \href{https://www.qemu.org/}{QEMU},  \href{https://www.mamedev.org/}{MAME}, etc  \pause
                 		\end{itemize}
 
 	\end{itemize}
      
-      \item{\textbf{Application virtual machines} \pause - a piece of computer software that isolates the application being used by the user from the computer. } \pause
+      \item \textbf{Application virtual machines} \pause - a piece of computer software that isolates the application being used by the user from the computer.   \pause
         \begin{itemize}
-        \item{Example: Oracle(Sun microsystem) Java Virtual Machine (JVM).}
+        \item Example: Oracle(Sun microsystem) Java Virtual Machine (JVM). 
         \end{itemize}
         
       %\end{itemize}
@@ -440,19 +440,19 @@
   \begin{frame}
     \frametitle{Virtual machine (4/5)} \pause
     \begin{itemize}
-    \item{Hardware virtual machines can be implemented in three ways:} \pause
+    \item Hardware virtual machines can be implemented in three ways:  \pause
       \begin{itemize}
-      \item{\textbf{Emulation} \pause - the virtual machine simulates the complete hardware, allowing an unmodified operating system for a completely different CPU to run.} \pause
+      \item \textbf{Emulation} \pause - the virtual machine simulates the complete hardware, allowing an unmodified operating system for a completely different CPU to run.  \pause
         \begin{itemize}
-        \item{Examples: VMware, Parallels, VirtualBox, QEMU, etc.} \pause
+        \item Examples: VMware, Parallels, VirtualBox, QEMU, etc.  \pause
         \end{itemize}
-      \item{\textbf{Paravirtualization} \pause - the virtual machine does not simulate hardware but instead offers a special API that requires operating system modifications to run.} \pause
+      \item \textbf{Paravirtualization} \pause - the virtual machine does not simulate hardware but instead offers a special API that requires operating system modifications to run.  \pause
         \begin{itemize}
-        \item{Examples: \textbf{Xen}} \pause
+        \item Examples: \textbf{Xen}  \pause
         \end{itemize}
-      \item{\textbf{Native (Full) virtualization} \pause - the virtual machine only partially simulates enough hardware to allow an unmodified operating system to run in isolation, but the \textbf{guest} operating system must be designed for the same type of CPU} \pause
+      \item \textbf{Native (Full) virtualization} \pause - the virtual machine only partially simulates enough hardware to allow an unmodified operating system to run in isolation, but the \textbf{guest} operating system must be designed for the same type of CPU  \pause
         \begin{itemize}
-        \item{Examples: KVM and VM/370}
+        \item Examples: KVM and VM/370 
           % \begin{center}
           %   \includegraphics[scale=0.2]{mosv2f1-26} \pause
           % \end{center}
@@ -466,14 +466,14 @@
   \begin{frame}
     \frametitle{Virtual machine (4/4)} \pause
     \begin{itemize}
-    \item{Advantage and disadvantage of virtual machine} \pause
+    \item Advantage and disadvantage of virtual machine  \pause
       \begin{itemize}
-      \item{The virtual-machine concept provides complete protection of system resources since each virtual machine is isolated from all other virtual machines.} \pause
+      \item The virtual-machine concept provides complete protection of system resources since each virtual machine is isolated from all other virtual machines.  \pause
         \begin{itemize}
-        \item{This isolation, however, permits no direct sharing of resources} \pause
+        \item This isolation, however, permits no direct sharing of resources  \pause
         \end{itemize}
-      \item{A virtual-machine system is a perfect vehicle for operating-systems research and development.} \pause
-      \item{The virtual machine concept is difficult to implement due to the effort required to provide an \textbf{exact} duplicate to the underlying machine.}
+      \item A virtual-machine system is a perfect vehicle for operating-systems research and development.  \pause
+      \item The virtual machine concept is difficult to implement due to the effort required to provide an \textbf{exact} duplicate to the underlying machine. 
       \end{itemize}
     \end{itemize}
   \end{frame}
@@ -482,7 +482,7 @@
   \begin{frame}
     \frametitle{Questions}
     \begin{itemize}
-    \item{Any questions?}
+    \item Any questions? 
     \end{itemize}
     \begin{center}
       \includegraphics[scale=.5]{question}
@@ -495,7 +495,7 @@
   \begin{frame}
     \frametitle{Operating System design} \pause
     \begin{itemize}
-    \item{Design goals} \pause
+    \item Design goals  \pause
       \begin{description}
       \item[\textbf{User goals}]{operating system should be convenient to use, easy to learn, reliable, safe, and fast.} \pause
       \item[\textbf{System goals}]{operating system should be easy to design, implement, and maintain, as well as flexible, reliable, error-free, and efficient.}
@@ -509,22 +509,22 @@
   \begin{frame}
     \frametitle{Policy and mechanism} \pause
     \begin{itemize}
-    \item{\textbf{Policies \pause - what to do}} \pause
+    \item \textbf{Policies \pause - what to do}  \pause
       \begin{itemize}
-      \item{For example, users should not be able to read other users' files.} \pause
+      \item For example, users should not be able to read other users' files.  \pause
       \end{itemize}
-    \item{\textbf{Mechanisms \pause - how to do}} \pause
+    \item \textbf{Mechanisms \pause - how to do}  \pause
       \begin{itemize}
-      \item{For example, file permissions are checked on \emph{open} system call.} \pause
+      \item For example, file permissions are checked on \emph{open} system call.  \pause
       \end{itemize}
-    \item{The \textbf{separation} of policy from mechanism is a very important principle} \pause
+    \item The \textbf{separation} of policy from mechanism is a very important principle  \pause
       \begin{itemize}
-      \item{It allows maximum flexibility if policy decisions are to be changed later.} \pause
+      \item It allows maximum flexibility if policy decisions are to be changed later.  \pause
       \end{itemize}
-    %\item{Two extremes:} \pause
+    %\item Two extremes:  \pause
     %  \begin{itemize}
-    %  \item{Micro-kernel \pause - all mechanisms, almost no policy} \pause
-    %  \item{The Apple Macintosh \pause - policy and mechanism are bound together}
+    %  \item Micro-kernel \pause - all mechanisms, almost no policy  \pause
+    %  \item The Apple Macintosh \pause - policy and mechanism are bound together 
     %  \end{itemize}
     \end{itemize}
   \end{frame}
@@ -535,13 +535,13 @@
   \begin{frame}
     \frametitle{The operating system implementation} \pause
     \begin{itemize}
-    \item{Traditionally written in assembly language, operating systems can now be written in higher-level languages.} \pause
-    \item{Code written in a high-level language:} \pause
+    \item Traditionally written in assembly language, operating systems can now be written in higher-level languages.  \pause
+    \item Code written in a high-level language:  \pause
       \begin{itemize}
-      \item{can be written faster.} \pause
-      \item{is more compact.} \pause
-      \item{is easier to understand and debug.} \pause
-      \item{is easier to port to some other hardwares.}
+      \item can be written faster.  \pause
+      \item is more compact.  \pause
+      \item is easier to understand and debug.  \pause
+      \item is easier to port to some other hardwares. 
       \end{itemize}
     \end{itemize}
   \end{frame}
@@ -550,7 +550,7 @@
   \begin{frame}
     \frametitle{Questions}
     \begin{itemize}
-    \item{Any questions?}
+    \item Any questions? 
     \end{itemize}
     \begin{center}
       \includegraphics[scale=.5]{question}
