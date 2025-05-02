@@ -864,7 +864,7 @@
   \begin{itemize}
   \item{这种方法采用“树”结构来组织页表，形成一个层次结构的页表；} \pause
     \begin{itemize}
-    \item{根据这颗树的深度可以分为：一、二、三级页表等；\pause其中，一级页表（也称为单级页表）就退化成了线性页表。} \pause
+    \item{根据这颗树的深度可以分为：一、二、三级页表等；其中，一级页表（也称为单级页表）就退化成了线性页表。} \pause
     \item{这里以32位逻辑地址、页面大小为4KB为例来讲解二级页表。}
     \end{itemize}
   \end{itemize}
@@ -878,7 +878,7 @@
     \begin{itemize}
     \item{把一个巨大的线性页表分割成很多小的页表：} \pause
       \begin{itemize}
-      \item{每一个小页表包含1024项PTE，\pause因此需要1024个小页表才能覆盖4GB的地址空间；} \pause
+      \item{每一个小页表包含1024项PTE，因此需要1024个小页表才能覆盖4GB的地址空间；} \pause
       \item{又sizeof(PTE)=4B，所以一个小页表恰好占4KB，即一个页面。} \pause
       \end{itemize}
     \item{然后通过一个称为outer page table的表把这些小页表组织起来。} \pause
