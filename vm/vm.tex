@@ -672,12 +672,12 @@
     \item{References:} \pause
       \begin{itemize}
           \item{Mark E. Russinovich and David A. Solomon, Windows Internals ( 
-\htmladdnormallink{Part 1}{https://www.microsoftpressstore.com/store/windows-internals-part-1-9780735648739},
-\htmladdnormallink{Part 2}{https://www.microsoftpressstore.com/store/windows-internals-part-2-9780735665873}), 6th Edition, Microsoft Press, 2012.} \pause
+\href{https://www.microsoftpressstore.com/store/windows-internals-part-1-9780735648739}{Part 1},
+\href{https://www.microsoftpressstore.com/store/windows-internals-part-2-9780735665873}{Part 2}), 6th Edition, Microsoft Press, 2012.} \pause
         \begin{itemize}
         \item{中文版：深入解析Windows操作系统（第6版），潘爱民、范德成 译} \pause
         \end{itemize}
-%      \item{Jeffrey Richter, \htmladdnormallink{\emph{Programming Applications for Microsoft Windows}}{http://www.microsoft.com/mspress/books/2345.aspx}, 4th Edition, Microsoft Press, 1999.} \pause
+%      \item{Jeffrey Richter, \href{http://www.microsoft.com/mspress/books/2345.aspx}{\emph{Programming Applications for Microsoft Windows}}, 4th Edition, Microsoft Press, 1999.} \pause
 %        \begin{itemize}
 %        \item{中文版：Windows核心编程（第4版），王建华 译}
 %        \end{itemize}
@@ -705,7 +705,7 @@
   \begin{frame}[fragile]
     \frametitle{User space layout of Windows 20000 Professional} \pause
     \begin{itemize}\parskip=0pt
-    \item{Program \htmladdnormallink{VMMap}{https://docs.microsoft.com/en-us/sysinternals/downloads/vmmap} can be used to dump the user space layout of a Windows process} \pause
+    \item{Program \href{https://docs.microsoft.com/en-us/sysinternals/downloads/vmmap}{VMMap} can be used to dump the user space layout of a Windows process} \pause
     \end{itemize}
     \begin{center}
 		\includegraphics[scale=0.3]{vmmap}
@@ -775,7 +775,7 @@
     \begin{itemize}
     \item{References} \pause
       \begin{itemize}
-      \item{Randal E. Bryant, David O' Hallaron, \htmladdnormallink{\emph{Computer System: A Programmer's Perspective}}{http://csapp.cs.cmu.edu/}, John \& Wiley, 2004.} \pause
+      \item{Randal E. Bryant, David O' Hallaron, \href{http://csapp.cs.cmu.edu/}{\emph{Computer System: A Programmer's Perspective}}, John \& Wiley, 2004.} \pause
         \begin{itemize}
         \item{中文版：深入理解计算机系统，龚奕利和雷迎春 译} \pause
         \end{itemize}
@@ -842,7 +842,7 @@
     \begin{itemize}
     \item{References} \pause
       \begin{itemize}
-      \item{John R. Levine, \htmladdnormallink{\emph{Linkers and Loaders}}{http://linker.iecc.com}, Morgan-Kauffman, 1999.} \pause
+      \item{John R. Levine, \href{http://linker.iecc.com}{\emph{Linkers and Loaders}}, Morgan-Kauffman, 1999.} \pause
       \item{GNU C Run-time library (glibc) source code: \url{http://www.gnu.org/glibc}}
       \end{itemize}
     \end{itemize}
@@ -989,7 +989,7 @@
     \item{With the virtual memory, because each process has a private address space,} \pause
       \begin{itemize}
       \item{The executable file can always be loaded into the preferred address, i.e., can be static bound.} \pause
-      \item{For example, Windows programs are statically bound to the address \htmladdnormallink{\emph{0x400000}}{https://blogs.msdn.microsoft.com/oldnewthing/20141003-00/?p=43923} and Linux programs to \htmladdnormallink{\emph{0x08048000}}{https://stackoverflow.com/questions/2966426/why-do-virtual-memory-addresses-for-linux-binaries-start-at-0x8048000}.} \pause
+      \item{For example, Windows programs are statically bound to the address \href{https://blogs.msdn.microsoft.com/oldnewthing/20141003-00/?p=43923}{\emph{0x400000}} and Linux programs to \href{https://stackoverflow.com/questions/2966426/why-do-virtual-memory-addresses-for-linux-binaries-start-at-0x8048000}{\emph{0x08048000}}.} \pause
       \end{itemize}
     \item{But the shared libraries are still NOT so lucky.}
     \end{itemize}
@@ -1015,7 +1015,7 @@
   \begin{frame}
     \frametitle{Relocation of shared libraries in Windows} \pause
     \begin{itemize}
-    \item{In Microsoft Visual Studio, the shared libraries are statically bound to the address \htmladdnormallink{\emph{0x10000000}}{https://blogs.msdn.microsoft.com/oldnewthing/20121227-00/?p=5713/} by default.} \pause
+    \item{In Microsoft Visual Studio, the shared libraries are statically bound to the address \href{https://blogs.msdn.microsoft.com/oldnewthing/20121227-00/?p=5713/}{\emph{0x10000000}} by default.} \pause
       \begin{itemize}
       \item{If an application uses several shared libraries which are all bound to the same preferred address, relocation is inevitable.} \pause
       \end{itemize}
