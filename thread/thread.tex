@@ -8,7 +8,21 @@
   colorlinks={true},
   linkcolor={blue},
 }
-\usepackage{CJKutf8}
+
+%% https://tex.stackexchange.com/questions/84652/is-there-a-macro-telling-which-os-were-using
+\usepackage{ifxetex,ifluatex}
+\newif\ifxetexorluatex % a new conditional starts as false
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi>0
+   \xetexorluatextrue
+\fi
+
+\ifxetexorluatex
+	\usepackage[slantfont,boldfont]{xeCJK}
+	\setCJKmainfont{STSong}
+\else
+	\usepackage{CJKutf8}
+\fi
+
 \usepackage{epic} % for \dashline
 \usepackage{listings}
 \lstset{
@@ -35,7 +49,9 @@
 \setbeamertemplate{navigation symbols}{}
 
 \begin{document}
+\ifxetexorluatex\else
 \begin{CJK*}{UTF8}{song}
+\fi
 
   \title{操作系统原理}
   \subtitle{第五章：线程管理}
@@ -511,5 +527,7 @@ DWORD WINAPI runner(LPVOID arg)
 \fi
 
   %% PAGE
+\ifxetexorluatex\else
 \end{CJK*}
+\fi
 \end{document}
