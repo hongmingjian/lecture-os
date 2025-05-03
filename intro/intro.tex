@@ -23,10 +23,14 @@
 \ifxetexorluatex
 	\usepackage[slantfont,boldfont]{xeCJK}
 	\usepackage{ifplatform}
+	\ifwindows
+		\setCJKmainfont{SimSun} % Windows默认中文字体：中易宋体
+	\fi
+	\ifmacosx
+		\setCJKmainfont{STSong} % MacOS默认中文字体：华文宋体
+	\fi
 	\iflinux
-		\setCJKmainfont{AR PL SungtiL GB} % 源于Ubuntu的系统应该有这个字体
-	\else
-		\setCJKmainfont{STSong} % Windows和MacOS貌似都有这个字体
+		\setCJKmainfont{Noto Serif CJK SC} % Linux默认中文字体：思源宋体(By Adobe & Google)
 	\fi
 \else
 	\usepackage{CJKutf8}
