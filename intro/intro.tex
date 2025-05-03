@@ -5,16 +5,13 @@
 \documentclass[CJKutf8,dvipsnames,table]{beamer}
 \usepackage{hyperref}
 \hypersetup{
-  pdftitle={Operating System Concepts},
-  pdfauthor={Hong MingJian},
-  pdfsubject={Introduction},
   pdfpagemode={FullScreen},
   colorlinks={true},
   linkcolor={blue},
 }
 
 %% https://tex.stackexchange.com/questions/47576/combining-ifxetex-and-ifluatex-with-the-logical-or-operation
-\usepackage{ifxetex,ifluatex}
+\usepackage{iftex}
 \newif\ifxetexorluatex % a new conditional starts as false
 \ifnum 0\ifxetex 1\fi\ifluatex 1\fi>0
    \xetexorluatextrue
@@ -38,21 +35,19 @@
 \usetheme{Madrid}%{Warsaw}
 \usecolortheme{crane}
 
-%gets rid of bottom navigation bars
-\setbeamertemplate{footline}[page number]{}
-%gets rid of navigation symbols
-\setbeamertemplate{navigation symbols}{}
-	
+\setbeamertemplate{footline}[page number]{} %gets rid of bottom navigation bars
+\setbeamertemplate{navigation symbols}{} %gets rid of navigation symbols
+
+\title{操作系统原理}
+\subtitle{第一章：介 绍}
+\author{洪明坚}
+\institute{重庆大学软件学院}
+\date{\today}
+
 \begin{document}
 \ifxetexorluatex\else
 \begin{CJK*}{UTF8}{song}  
 \fi
-
-  \title{操作系统原理}
-  \subtitle{第一章：介 绍}
-	\author{洪明坚}
-	\institute{重庆大学软件学院}
-  \date{\today}
 
   \AtBeginSection[]
   {

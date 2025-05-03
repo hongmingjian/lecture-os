@@ -13,7 +13,7 @@ handout: $(LECTURE)_handout.pdf
 $(LECTURE)_handout.tex: $(LECTURE).tex
 	cp -f $< $@
 	sed -e 's@\\documentclass\[@&handout,@' \
-	    -e 's@{FullScreen}@{None}@' \
+	    -e 's@{FullScreen}@{UseNone}@' \
 	    -i.bak $@
 
 $(LECTURE).pdf: $(LECTURE).tex $(EXTRADEPENDS)
