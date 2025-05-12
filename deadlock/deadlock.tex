@@ -21,12 +21,12 @@
 	\usepackage[slantfont,boldfont]{xeCJK}
 	\ifwindows
 		\setCJKmainfont{SimSun} % Windows默认中文字体：中易宋体
-	\fi
-	\ifmacosx
-		\setCJKmainfont{STSong} % MacOS默认中文字体：华文宋体
-	\fi
-	\iflinux
-		\setCJKmainfont{Noto Serif CJK SC} % Linux默认中文字体：思源宋体(By Adobe & Google)
+	\else
+		\ifmacosx
+			\setCJKmainfont{STSong} % MacOS默认中文字体：华文宋体
+		\else
+			\setCJKmainfont{Noto Serif CJK SC} % Linux默认中文字体：思源宋体(By Adobe & Google)
+		\fi
 	\fi
 \else
 	\usepackage{CJKutf8}
